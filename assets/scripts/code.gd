@@ -125,7 +125,7 @@ func _input(event: InputEvent) -> void:
 	if player_inside:
 		if event.is_action_pressed("action_button"):
 			visible = !visible
-			player.can_move = !player.can_move
+			player.can_move = !player.can_moveaaa
 
 func _on_close_button_pressed() -> void:
 	_close()
