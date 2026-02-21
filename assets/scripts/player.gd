@@ -4,9 +4,10 @@ extends CharacterBody3D
 @export_range(1.0,10.0,0.1) var speed: float = 5.0
 @export_range(0.5,7.0,0.1) var camera_lerp_speed: float = 3.0
 @export var enble_move:bool = true
-
+@export var hold_item: bool = false
 @onready var camera: Camera3D = $Camera3D
-@export var player_mesh: MeshInstance3D
+@export var player_mesh: Node3D
+@export var game_over_screen: Control
 var _player_sus: float = 0.0
 @export_range(0.0, 100.0, 0.01) var player_sus: float:
 	get:
@@ -26,6 +27,7 @@ var camera_target_offset: Vector3 = Vector3.ZERO
 var camera_offset_strength: Vector3
 var is_sus: bool = false
 var sus_timer: Timer
+var anim_player: AnimationPlayer
 
 func _start_sus_timer():
 	sus_timer.wait_time = sus_timeout
@@ -37,13 +39,15 @@ func _on_sus_timeout():
 func _ready() -> void:
 	camera_original_position = camera.position
 	camera_offset_strength = Vector3(camera_move.x, 0.0, camera_move.y)
-	player_mesh = $PlayerMesh
+	player_mesh = $PlayerNode
 	
 	sus_timer = Timer.new()
 	sus_timer.wait_time = sus_timeout
 	sus_timer.one_shot = true
 	sus_timer.timeout.connect(_on_sus_timeout)
 	add_child(sus_timer)
+	
+	anim_player = player_mesh.get_node("AnimationPlayer")
 
 func _physics_process(delta):
 	if can_move:
@@ -63,16 +67,28 @@ func _physics_process(delta):
 			velocity.x = input_dir.x * speed
 			velocity.z = input_dir.y * speed
 			camera_target_offset = Vector3(-input_dir.x, 0.0, -input_dir.y) * camera_offset_strength
-			player_mesh.global_rotation.y = Vector2(input_dir.x, -input_dir.y).angle() - PI / 2
+			player_mesh.global_rotation.y = Vector2(input_dir.x, -input_dir.y).angle() + PI / 2
+			
+			if hold_item:
+				anim_player.play("run_item")
+			else:
+				anim_player.play("run")
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
 			velocity.z = move_toward(velocity.z, 0, speed)
 			camera_target_offset = Vector3.ZERO
+			
+			if hold_item:
+				anim_player.play("t_pose")
+			else:
+				anim_player.play("idle")
 		
 		camera.position = camera.position.lerp(camera_original_position + camera_target_offset, camera_lerp_speed * delta)
 		move_and_slide()
 		if player_sus >= 100.0:
 			can_move = false
+			Engine.time_scale = 0.0
+			game_over_screen.visible = true
 			print("game over")
 		if player_sus > 0.0 and !is_sus:
 			player_sus -= sus_down_per_second * delta

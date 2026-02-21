@@ -12,7 +12,6 @@ void vertex() {
     world_y = (MODEL_MATRIX * vec4(VERTEX, 1.0)).y;
 }
 
-
 void fragment() {
 	float raw_depth = texture(depth_texture, SCREEN_UV).r;
 	vec4 scene_pos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, raw_depth, 1.0);

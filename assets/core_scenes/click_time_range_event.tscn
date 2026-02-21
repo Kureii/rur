@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://dj7qo4i2g87dg"]
+
+[ext_resource type="Script" uid="uid://bqog5soopv0gi" path="res://assets/scripts/click_time_range_event.gd" id="1_mc5a4"]
+
+[node name="ClickTimeRangeEvent" type="Control" unique_id=1541085833]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_mc5a4")
+action_slider_position = 0.64
+bad_fill_color = Color(0.6475143, 0, 0.24232274, 1)
+action_slider_fill_color = Color(0, 0.6440927, 0.95895094, 1)
+
+[node name="Background" type="ColorRect" parent="." unique_id=13437695]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08627451, 0.08627451, 0.08627451, 0.7607843)
+
+[node name="SliderContainer" type="VBoxContainer" parent="." unique_id=927050524]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -20.0
+offset_right = 400.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Slider" type="ColorRect" parent="SliderContainer" unique_id=674195059]
+custom_minimum_size = Vector2(800, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginInsideSlider" type="MarginContainer" parent="SliderContainer/Slider" unique_id=1508953036]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="BadFill" type="ColorRect" parent="SliderContainer/Slider/MarginInsideSlider" unique_id=1552447343]
+layout_mode = 2
+color = Color(0.6475143, 0, 0.24232274, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SliderContainer/Slider/MarginInsideSlider/BadFill" unique_id=2135127887]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="NeutralFillLeftSpacer" type="ColorRect" parent="SliderContainer/Slider/MarginInsideSlider/BadFill/HBoxContainer" unique_id=1465573352]
+custom_minimum_size = Vector2(123, 0)
+layout_mode = 2
+color = Color(0.6475143, 0, 0.24232274, 1)
+
+[node name="NeutralFill" type="ColorRect" parent="SliderContainer/Slider/MarginInsideSlider/BadFill/HBoxContainer" unique_id=2055555805]
+custom_minimum_size = Vector2(246, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+color = Color(0.8392157, 0.41960785, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SliderContainer/Slider/MarginInsideSlider/BadFill/HBoxContainer/NeutralFill" unique_id=657712086]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="GoodFillLeftSpacer" type="ColorRect" parent="SliderContainer/Slider/MarginInsideSlider/BadFill/HBoxContainer/NeutralFill/HBoxContainer" unique_id=511791898]
+custom_minimum_size = Vector2(61.5, 0)
+layout_mode = 2
+color = Color(0.8392157, 0.41960785, 0, 1)
+
+[node name="GoodFill" type="ColorRect" parent="SliderContainer/Slider/MarginInsideSlider/BadFill/HBoxContainer/NeutralFill/HBoxContainer" unique_id=1054721903]
+custom_minimum_size = Vector2(123, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+color = Color(0, 0.8666667, 0, 1)
+
+[node name="MarginOutsiteSlider" type="MarginContainer" parent="SliderContainer/Slider" unique_id=421544807]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="MarginOutsideContainer" type="HBoxContainer" parent="SliderContainer/Slider/MarginOutsiteSlider" unique_id=1150899198]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="ActionSliderLeftSpacer" type="ReferenceRect" parent="SliderContainer/Slider/MarginOutsiteSlider/MarginOutsideContainer" unique_id=985941533]
+custom_minimum_size = Vector2(311.68, 50)
+layout_mode = 2
+border_width = 0.0
+editor_only = false
+
+[node name="ActionSlider" type="ColorRect" parent="SliderContainer/Slider/MarginOutsiteSlider/MarginOutsideContainer" unique_id=1493039574]
+custom_minimum_size = Vector2(5, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0.6440927, 0.95895094, 1)
+
+[node name="ActionSliderRightSpacer" type="ReferenceRect" parent="SliderContainer/Slider/MarginOutsiteSlider/MarginOutsideContainer" unique_id=380085230]
+custom_minimum_size = Vector2(175.32, 50)
+layout_mode = 2
+border_width = 0.0
+editor_only = false

@@ -1,34 +1,18 @@
 [gd_scene format=3 uid="uid://b5kwrbaijojyt"]
 
 [ext_resource type="Script" uid="uid://db6waqfruvmfv" path="res://assets/scripts/player.gd" id="1_0c8fa"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_nrs0t"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_0c8fa"]
-radius = 0.1
-height = 0.2
+[ext_resource type="PackedScene" uid="uid://b3fmdybf5wrtn" path="res://assets/meshes/character/borek_anim.glb" id="2_i14mi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i14mi"]
 
-[node name="Node3D" type="CharacterBody3D" unique_id=453805534 node_paths=PackedStringArray("player_mesh")]
+[node name="Node3D" type="CharacterBody3D" unique_id=453805534]
 script = ExtResource("1_0c8fa")
-player_mesh = NodePath("PlayerMesh")
-
-[node name="PlayerMesh" type="MeshInstance3D" parent="." unique_id=79071936]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_nrs0t")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerMesh" unique_id=1747005905]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31519222, 0, -0.49794495)
-mesh = SubResource("SphereMesh_0c8fa")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="PlayerMesh" unique_id=1524830924]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.315, 0, -0.498)
-mesh = SubResource("SphereMesh_0c8fa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=378544446]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99775195, 0)
 shape = SubResource("CapsuleShape3D_i14mi")
+
+[node name="PlayerNode" parent="." unique_id=777650406 instance=ExtResource("2_i14mi")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=828070689]
 transform = Transform3D(0.7071068, 0.61237246, -0.35355335, 0, 0.49999997, 0.86602545, 0.7071068, -0.61237246, 0.35355335, -4, 10.769276, 3.6792946)

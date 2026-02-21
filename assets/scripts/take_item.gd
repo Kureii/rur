@@ -14,6 +14,11 @@ var is_emplace_near = false
 var first_run = true
 var parent_node: Node3D
 
+func _ready() -> void:
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	
+
 func _input(event: InputEvent) -> void:
 	if is_player_inside:
 		if event.is_action_pressed("action_button"):
@@ -49,6 +54,7 @@ func _process(delta: float) -> void:
 		rotation.y = rot_y
 		position = offset.rotated(Vector3.UP, rot_y)
 	show_ui_element()
+	player.hold_item = is_player_holding
 
 func show_ui_element():
 	if parent_node != emplace_node:

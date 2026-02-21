@@ -82,7 +82,7 @@ func _ready() -> void:
 	_set_length(length)
 	_set_bottom_radius()
 	
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var t = Time.get_ticks_msec() / 1000.0 * speed
 	var number_of_lines = line_origins.size()
 	for i in range(number_of_lines) :
