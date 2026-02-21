@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://e5fc2s4kocxf"]
+
+[ext_resource type="Texture2D" uid="uid://cmmgyvisigc7k" path="res://assets/textures/Levels/Level2/podlaha2_BC.png" id="1_exiyk"]
+[ext_resource type="Texture2D" uid="uid://cnfb6xcp4w2rx" path="res://assets/textures/Levels/Level2/podlaha2_ARM.png" id="2_txg3k"]
+[ext_resource type="Texture2D" uid="uid://dq8u4fnwkd21h" path="res://assets/textures/Levels/Level2/podlaha2_N.png" id="3_k6uf8"]
+
+[resource]
+albedo_texture = ExtResource("1_exiyk")
+metallic = 1.0
+metallic_texture = ExtResource("2_txg3k")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_txg3k")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.23
+normal_texture = ExtResource("3_k6uf8")
+ao_enabled = true
+ao_texture = ExtResource("2_txg3k")
+ao_texture_channel = 2

@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d1w3idk00dekw"]
+
+[ext_resource type="Texture2D" uid="uid://cw83u34ylaur2" path="res://assets/textures/Levels/Level2/stena2_BC.png" id="1_2qar5"]
+[ext_resource type="Texture2D" uid="uid://cupaqab22pvsv" path="res://assets/textures/Levels/Level2/stena2_ARM.png" id="2_oxci0"]
+[ext_resource type="Texture2D" uid="uid://h7c5n2fcqg7i" path="res://assets/textures/Levels/Level2/stena2_N.png" id="3_rng4f"]
+
+[resource]
+albedo_texture = ExtResource("1_2qar5")
+metallic = 1.0
+metallic_texture = ExtResource("2_oxci0")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_oxci0")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.37
+normal_texture = ExtResource("3_rng4f")
+ao_enabled = true
+ao_texture = ExtResource("2_oxci0")
