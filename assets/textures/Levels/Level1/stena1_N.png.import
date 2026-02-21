@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cikpikdm7fy6n"
-path.s3tc="res://.godot/imported/skrin_ARM.png-c060d597adb7c4775a974ba987c0a1c3.s3tc.ctex"
+uid="uid://da5nfhl7fi6y7"
+path.s3tc="res://.godot/imported/stena1_N.png-d89220136bda13358f743c8dc04ed8d9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/materials/skrin/skrin_ARM.png"
-dest_files=["res://.godot/imported/skrin_ARM.png-c060d597adb7c4775a974ba987c0a1c3.s3tc.ctex"]
+source_file="res://assets/textures/Levels/Level1/stena1_N.png"
+dest_files=["res://.godot/imported/stena1_N.png-d89220136bda13358f743c8dc04ed8d9.s3tc.ctex"]
 
 [params]
 
@@ -22,12 +22,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://assets/textures/Levels/Level1/stena1_N.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

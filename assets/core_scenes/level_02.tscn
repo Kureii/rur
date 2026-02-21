@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://blcrvwb1826s5"]
 
 [ext_resource type="ArrayMesh" uid="uid://ddlwne0cua6s8" path="res://assets/meshes/static/level/Level_02.obj" id="1_ntfxf"]
-[ext_resource type="Material" uid="uid://d1w3idk00dekw" path="res://assets/materials/Levels/Level2/Level2_Zdi.tres" id="2_0jywm"]
-[ext_resource type="Material" uid="uid://e5fc2s4kocxf" path="res://assets/materials/Levels/Level2/Level2_Zem.tres" id="2_65emy"]
+[ext_resource type="Material" uid="uid://d1w3idk00dekw" path="res://assets/materials/levels/Level2/Level2_Zdi.tres" id="2_0jywm"]
+[ext_resource type="Material" uid="uid://e5fc2s4kocxf" path="res://assets/materials/levels/Level2/Level2_Zem.tres" id="2_65emy"]
 [ext_resource type="Material" uid="uid://dy3cmw66yg72d" path="res://assets/materials/Sloup/Sloup.tres" id="3_0jywm"]
 [ext_resource type="ArrayMesh" uid="uid://c6nt4h2ciemyj" path="res://assets/meshes/static/wall/Sloup/sloup.obj" id="4_vuh1b"]
 [ext_resource type="ArrayMesh" uid="uid://doviapyfrfab1" path="res://assets/meshes/static/level/Doors.obj" id="6_m3u8y"]

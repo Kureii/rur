@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bfnk3tilhyrc8"]
+
+[ext_resource type="Texture2D" uid="uid://bd3vmj3lknqkh" path="res://assets/textures/boxes/open/krabica_otvorena_BC_v2.png" id="1_if32g"]
+[ext_resource type="Texture2D" uid="uid://b4jko7er81g24" path="res://assets/textures/boxes/open/krabica_otvorena_ARM.png" id="2_iew5h"]
+[ext_resource type="Texture2D" uid="uid://bb7og7wrxehsf" path="res://assets/textures/boxes/open/krabica_otvorena_N.png" id="3_ifnf8"]
+
+[resource]
+albedo_texture = ExtResource("1_if32g")
+metallic = 1.0
+metallic_texture = ExtResource("2_iew5h")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_iew5h")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.3
+normal_texture = ExtResource("3_ifnf8")
+ao_enabled = true
+ao_texture = ExtResource("2_iew5h")

@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cikpikdm7fy6n"
-path.s3tc="res://.godot/imported/skrin_ARM.png-c060d597adb7c4775a974ba987c0a1c3.s3tc.ctex"
+uid="uid://dyilcdfn80yom"
+path="res://.godot/imported/sliz_podlaha1_mask.bmp-b49b11facc91ede027dc0307361afd46.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/materials/skrin/skrin_ARM.png"
-dest_files=["res://.godot/imported/skrin_ARM.png-c060d597adb7c4775a974ba987c0a1c3.s3tc.ctex"]
+source_file="res://assets/textures/Levels/Level1/sliz_podlaha1_mask.bmp"
+dest_files=["res://.godot/imported/sliz_podlaha1_mask.bmp-b49b11facc91ede027dc0307361afd46.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

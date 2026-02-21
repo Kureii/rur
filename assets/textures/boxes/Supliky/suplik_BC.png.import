@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cikpikdm7fy6n"
-path.s3tc="res://.godot/imported/skrin_ARM.png-c060d597adb7c4775a974ba987c0a1c3.s3tc.ctex"
+uid="uid://byy0ve050tioo"
+path.s3tc="res://.godot/imported/suplik_BC.png-d4fe64856a5a9ff8a8fd2d5b5a5928fa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/materials/skrin/skrin_ARM.png"
-dest_files=["res://.godot/imported/skrin_ARM.png-c060d597adb7c4775a974ba987c0a1c3.s3tc.ctex"]
+source_file="res://assets/textures/boxes/Supliky/suplik_BC.png"
+dest_files=["res://.godot/imported/suplik_BC.png-d4fe64856a5a9ff8a8fd2d5b5a5928fa.s3tc.ctex"]
 
 [params]
 

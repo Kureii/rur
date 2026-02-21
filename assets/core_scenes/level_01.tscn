@@ -2,16 +2,21 @@
 
 [ext_resource type="ArrayMesh" uid="uid://dtnocqaecnjx4" path="res://assets/meshes/static/level/Level_01.obj" id="1_aasjv"]
 [ext_resource type="ArrayMesh" uid="uid://d3b708d1c4ook" path="res://assets/meshes/static/wall/skrinka.obj" id="2_01tgr"]
+[ext_resource type="Material" uid="uid://ou8l73je8qwu" path="res://assets/materials/levels/Level1/Level1_Zdi.tres" id="2_pyfxo"]
+[ext_resource type="Material" uid="uid://bjnpc0rdq0okg" path="res://assets/materials/levels/Level1/Level1_Zem.tres" id="3_tp8tp"]
 [ext_resource type="Material" uid="uid://nta0dld40tja" path="res://assets/materials/skrin/skrin.tres" id="4_07o3q"]
 [ext_resource type="ArrayMesh" uid="uid://duwf5skju3vix" path="res://assets/meshes/static/skrin_velka.obj" id="4_b6h8f"]
 [ext_resource type="ArrayMesh" uid="uid://bclwcsvhl0tso" path="res://assets/meshes/static/barel/barel.obj" id="5_heiac"]
 [ext_resource type="ArrayMesh" uid="uid://pnfdjmrqt4iv" path="res://assets/meshes/static/box/suplik.obj" id="6_bm5u6"]
 [ext_resource type="ArrayMesh" uid="uid://b15d78gddq3hx" path="res://assets/meshes/static/krabice/krabice_otevrena.obj" id="7_1bffx"]
 [ext_resource type="ArrayMesh" uid="uid://clx5togyyfurt" path="res://assets/meshes/static/krabice/krabice_rozbita.obj" id="8_ecglt"]
+[ext_resource type="Material" uid="uid://cfiiul4lnrqx1" path="res://assets/materials/boxes/Supliky/Supliky.tres" id="9_17swj"]
 [ext_resource type="ArrayMesh" uid="uid://112vckvj3s1p" path="res://assets/meshes/static/krabice/krabice_zavrena.obj" id="9_x51rt"]
 [ext_resource type="ArrayMesh" uid="uid://cky5lvctj51au" path="res://assets/meshes/static/kniha/kniha_otvrena.obj" id="10_bsn7y"]
+[ext_resource type="Material" uid="uid://bfnk3tilhyrc8" path="res://assets/materials/boxes/open/BoxOpenV2.tres" id="11_4xf3k"]
 [ext_resource type="ArrayMesh" uid="uid://bgla5cbieybd0" path="res://assets/meshes/static/kniha/kniha_zavrena.obj" id="11_mh75q"]
 [ext_resource type="ArrayMesh" uid="uid://xnqti0dvdf6l" path="res://assets/meshes/static/sloup/sloup.obj" id="12_5d7oh"]
+[ext_resource type="Material" uid="uid://dy3cmw66yg72d" path="res://assets/materials/Sloup/Sloup.tres" id="13_mh75q"]
 [ext_resource type="ArrayMesh" uid="uid://bbl0bnw06fcr0" path="res://assets/meshes/static/svetlo/svetlo.obj" id="13_pyfxo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mh75q"]
@@ -76,6 +81,8 @@ size = Vector3(0.844032, 0.108926, 0.478735)
 [node name="Level01" type="MeshInstance3D" parent="." unique_id=1725623663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9796829, 0.016974345, 0.6250839)
 mesh = ExtResource("1_aasjv")
+surface_material_override/0 = ExtResource("2_pyfxo")
+surface_material_override/1 = ExtResource("3_tp8tp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level01" unique_id=1775965044]
 physics_material_override = SubResource("PhysicsMaterial_mh75q")
@@ -163,6 +170,7 @@ mesh = ExtResource("11_mh75q")
 [node name="SkrinVelka2" type="MeshInstance3D" parent="StaticObjects" unique_id=688105311]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4577343, 0.016975299, -3.7723835)
 mesh = ExtResource("4_b6h8f")
+surface_material_override/0 = ExtResource("4_07o3q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticObjects/SkrinVelka2" unique_id=209406848]
 
@@ -205,6 +213,7 @@ mesh = ExtResource("11_mh75q")
 [node name="SkrinVelka3" type="MeshInstance3D" parent="StaticObjects" unique_id=335171046]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3979387, 0.016975299, 0.77999425)
 mesh = ExtResource("4_b6h8f")
+surface_material_override/0 = ExtResource("4_07o3q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticObjects/SkrinVelka3" unique_id=180422947]
 
@@ -243,6 +252,7 @@ mesh = ExtResource("6_bm5u6")
 [node name="SkrinVelka4" type="MeshInstance3D" parent="StaticObjects" unique_id=1021127950]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30363107, 0.016975299, 0.77999425)
 mesh = ExtResource("4_b6h8f")
+surface_material_override/0 = ExtResource("4_07o3q")
 
 [node name="Suplik12" type="MeshInstance3D" parent="StaticObjects/SkrinVelka4" unique_id=838798679]
 transform = Transform3D(0.4921653, 0, -0.8705024, 0, 1, 0, 0.8705024, 0, 0.4921653, -0.16613233, 2.388071, -0.011961341)
@@ -285,6 +295,7 @@ shape = SubResource("BoxShape3D_heiac")
 [node name="SkrinVelka5" type="MeshInstance3D" parent="StaticObjects" unique_id=1066006071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0744822, 0.016975299, 5.0260267)
 mesh = ExtResource("4_b6h8f")
+surface_material_override/0 = ExtResource("4_07o3q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticObjects/SkrinVelka5" unique_id=660437231]
 
@@ -299,6 +310,7 @@ mesh = ExtResource("6_bm5u6")
 [node name="SkrinVelka6" type="MeshInstance3D" parent="StaticObjects" unique_id=967522042]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7996781, 0.016975299, 5.0260267)
 mesh = ExtResource("4_b6h8f")
+surface_material_override/0 = ExtResource("4_07o3q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticObjects/SkrinVelka6" unique_id=1393359752]
 
@@ -317,6 +329,7 @@ mesh = ExtResource("10_bsn7y")
 [node name="SkrinVelka7" type="MeshInstance3D" parent="StaticObjects" unique_id=565311593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.538626, 0.016975299, 5.0260267)
 mesh = ExtResource("4_b6h8f")
+surface_material_override/0 = ExtResource("4_07o3q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticObjects/SkrinVelka7" unique_id=1741939266]
 
@@ -360,6 +373,7 @@ shape = SubResource("ConvexPolygonShape3D_bsn7y")
 
 [node name="KrabiceOtevrena" type="MeshInstance3D" parent="DynamicObjects/RigidBody3D6/CollisionShape3D" unique_id=131041828]
 mesh = ExtResource("7_1bffx")
+surface_material_override/0 = ExtResource("11_4xf3k")
 
 [node name="RigidBody3D8" type="RigidBody3D" parent="DynamicObjects" unique_id=1560895932]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7888658, 0.020487346, -0.49897087)

@@ -1,7 +1,15 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://nta0dld40tja"]
 
-[ext_resource type="Texture2D" uid="uid://o7n6lox7k6gf" path="res://assets/materials/skrin/sliz_skrin_mask.bmp" id="1_16f8s"]
+[ext_resource type="Texture2D" uid="uid://6viqmrwcbrpc" path="res://assets/materials/skrin/skrin_BC.png" id="1_b0fmf"]
+[ext_resource type="Texture2D" uid="uid://cikpikdm7fy6n" path="res://assets/materials/skrin/skrin_ARM.png" id="2_cu7fu"]
 
 [resource]
+albedo_texture = ExtResource("1_b0fmf")
 metallic = 1.0
-metallic_texture = ExtResource("1_16f8s")
+metallic_texture = ExtResource("2_cu7fu")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_cu7fu")
+roughness_texture_channel = 1
+normal_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("2_cu7fu")
