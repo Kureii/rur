@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://b0p741oe01pxm"]
+
+[ext_resource type="Script" uid="uid://dhk12yiaets2p" path="res://assets/scripts/camera_sus.gd" id="1_h5k63"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vn23y"]
+top_radius = 0.1
+bottom_radius = 0.2
+height = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qn666"]
+albedo_color = Color(1, 0, 0, 0.105882354)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 4.16
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hsyiw"]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5k63"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.1764706)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h5k63"]
+top_radius = -0.015
+bottom_radius = 3.555
+height = 5.0
+
+[node name="CameraMesh" type="MeshInstance3D" unique_id=1320165716 node_paths=PackedStringArray("raycast")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+mesh = SubResource("CylinderMesh_vn23y")
+script = ExtResource("1_h5k63")
+sus_per_second = 15.0
+raycast = [NodePath("RayCastArray/RayCast3D"), NodePath("RayCastArray/RayCast3D2"), NodePath("RayCastArray/RayCast3D3")]
+
+[node name="Lines" type="Node3D" parent="." unique_id=753574907]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="LineOrigin" type="Node3D" parent="Lines" unique_id=1124289112]
+transform = Transform3D(-0.32193244, 0.9467626, 4.2616675e-09, -0.84363824, -0.28686658, 0.45385233, 0.4296904, 0.1461098, 0.8910769, 0, 0, 0)
+
+[node name="Line" type="MeshInstance3D" parent="Lines/LineOrigin" unique_id=1307757852]
+transform = Transform3D(1, 0, 0, 0, 0.9999524, 0, 0, 0, 0.9999524, 0, -1.5, 0)
+material_override = SubResource("StandardMaterial3D_qn666")
+mesh = SubResource("CylinderMesh_hsyiw")
+
+[node name="LineOrigin2" type="Node3D" parent="Lines" unique_id=167027967]
+transform = Transform3D(0.4868388, -0.87349176, 0, 0.7785327, 0.4339135, -0.45343775, 0.39607418, 0.22075106, 0.8912879, 0, 0, 0)
+
+[node name="Line" type="MeshInstance3D" parent="Lines/LineOrigin2" unique_id=504589357]
+transform = Transform3D(1, 0, 0, 0, 0.9999524, 0, 0, 0, 0.9999524, 0, -1.5, 0)
+material_override = SubResource("StandardMaterial3D_qn666")
+mesh = SubResource("CylinderMesh_hsyiw")
+
+[node name="LineOrigin3" type="Node3D" parent="Lines" unique_id=1959198434]
+transform = Transform3D(-0.98371863, -0.17971537, 6.0698e-10, 0.16024125, -0.87712187, 0.45274693, -0.081365585, 0.44537556, 0.89163905, 0, 0, 0)
+
+[node name="Line" type="MeshInstance3D" parent="Lines/LineOrigin3" unique_id=396300719]
+transform = Transform3D(1, 0, 0, 0, 0.9999524, 0, 0, 0, 0.9999524, 0, -1.5, 0)
+material_override = SubResource("StandardMaterial3D_qn666")
+mesh = SubResource("CylinderMesh_hsyiw")
+
+[node name="LineOrigin4" type="Node3D" parent="Lines" unique_id=1946324054]
+transform = Transform3D(-0.32193244, -0.94676256, 0, 0.84463465, -0.28720537, -0.45177996, 0.42772838, -0.14544263, 0.8921293, 0, 0, 0)
+
+[node name="Line" type="MeshInstance3D" parent="Lines/LineOrigin4" unique_id=221571717]
+transform = Transform3D(1, 0, 0, 0, 0.9999524, 0, 0, 0, 0.9999524, 0, -1.5, 0)
+material_override = SubResource("StandardMaterial3D_qn666")
+mesh = SubResource("CylinderMesh_hsyiw")
+
+[node name="LineOrigin5" type="Node3D" parent="Lines" unique_id=75726905]
+transform = Transform3D(0.4868388, 0.87349176, -4.863374e-09, -0.77981657, 0.43462905, 0.45053706, 0.39354044, -0.2193389, 0.8927577, 0, 0, 0)
+
+[node name="Line" type="MeshInstance3D" parent="Lines/LineOrigin5" unique_id=1957901259]
+transform = Transform3D(1, 0, 0, 0, 0.9999524, 0, 0, 0, 0.9999524, 0, -1.5, 0)
+material_override = SubResource("StandardMaterial3D_qn666")
+mesh = SubResource("CylinderMesh_hsyiw")
+
+[node name="LineOrigin6" type="Node3D" parent="Lines" unique_id=1405060103]
+transform = Transform3D(-0.9837186, 0.17971538, 2.4004929e-10, -0.16057973, -0.87897474, -0.44901842, -0.08069551, -0.4417078, 0.8935225, 0, 0, 0)
+
+[node name="Line" type="MeshInstance3D" parent="Lines/LineOrigin6" unique_id=159848702]
+transform = Transform3D(1, 0, 0, 0, 0.9999524, 0, 0, 0, 0.9999524, 0, -1.5, 0)
+material_override = SubResource("StandardMaterial3D_qn666")
+mesh = SubResource("CylinderMesh_hsyiw")
+
+[node name="Volume" type="MeshInstance3D" parent="." unique_id=1468263995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+material_override = SubResource("StandardMaterial3D_h5k63")
+mesh = SubResource("CylinderMesh_h5k63")
+
+[node name="RayCastArray" type="Node3D" parent="." unique_id=1125006192]
+
+[node name="RayCast3D" type="RayCast3D" parent="RayCastArray" unique_id=1728670632]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+target_position = Vector3(-4.7832246, -2.2387261, 0)
+
+[node name="RayCast3D2" type="RayCast3D" parent="RayCastArray" unique_id=1585244829]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+target_position = Vector3(-9.253318, -1.5272888, 0)
+
+[node name="RayCast3D3" type="RayCast3D" parent="RayCastArray" unique_id=1389420961]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+target_position = Vector3(-13.117647, -0.9122616, 0)
