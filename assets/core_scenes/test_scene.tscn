@@ -190,11 +190,21 @@ emplace_node = NodePath("../EmplaceTakeble")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12939453, 0)
 shape = SubResource("BoxShape3D_byt41")
 
+[node name="CameraMesh" parent="Levels/Level_01" unique_id=1320165716 node_paths=PackedStringArray("player") instance=ExtResource("6_e3lx5")]
+transform = Transform3D(0.70710677, 0.6142151, 0.35034212, 0, 0.4954586, -0.8686313, -0.70710677, 0.6142151, 0.35034212, 3.7298927, 3.285437, 5.3807235)
+sus_per_second = 14.215
+speed = 0.43
+radius = 0.555
+thick = 0.02
+length = 5.0
+volume_top = -0.015
+player = NodePath("../../../Player")
+
 [node name="Level02" type="MeshInstance3D" parent="Levels" unique_id=1813012101]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.076374, 0.016974345, -11.745178)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.070372, 0.006514445, -11.71754)
 mesh = ExtResource("5_e3lx5")
 
-[node name="CameraMesh" parent="Levels/Level02" unique_id=1320165716 node_paths=PackedStringArray("player") instance=ExtResource("6_e3lx5")]
+[node name="CameraMesh" parent="Levels/Level02" unique_id=1038588751 node_paths=PackedStringArray("player") instance=ExtResource("6_e3lx5")]
 transform = Transform3D(1, 0, 0, 0, 0.49541306, -0.8686573, 0, 0.8686573, 0.49541306, -5.933301, 3.285437, 6.5452743)
 sus_per_second = 14.215
 speed = 0.43
