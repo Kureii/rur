@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dy3cmw66yg72d"]
+
+[ext_resource type="Texture2D" uid="uid://bjsfpvnqw7e13" path="res://assets/textures/models/sloup/sloup_BC.png" id="1_8chnk"]
+[ext_resource type="Texture2D" uid="uid://b31cw6br6su4q" path="res://assets/textures/models/sloup/sloup_ARM.png" id="2_m38lq"]
+[ext_resource type="Texture2D" uid="uid://bncw6upfvf0et" path="res://assets/textures/models/sloup/sloup_N.png" id="3_vxlaa"]
+
+[resource]
+albedo_texture = ExtResource("1_8chnk")
+metallic = 1.0
+metallic_texture = ExtResource("2_m38lq")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_m38lq")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_vxlaa")
+ao_enabled = true
+ao_texture = ExtResource("2_m38lq")
