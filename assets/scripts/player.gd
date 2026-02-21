@@ -94,7 +94,6 @@ func _physics_process(delta):
 			player_sus -= sus_down_per_second * delta
 			if player_sus < 0.0:
 				player_sus = 0.0
-			
 
 func _get_mouse_world_position() -> Variant:
 	var camera = get_viewport().get_camera_3d()
