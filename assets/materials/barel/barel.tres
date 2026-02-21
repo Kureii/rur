@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dhlmkd5wgl880"]
+
+[ext_resource type="Texture2D" uid="uid://bodx0hqa5j8qm" path="res://assets/materials/barel/barel_BC_v2.png" id="1_g4cc0"]
+[ext_resource type="Texture2D" uid="uid://bb347exa0nk81" path="res://assets/materials/barel/barel_ARM.png" id="2_cto8l"]
+[ext_resource type="Texture2D" uid="uid://b30a64i24l27s" path="res://assets/materials/barel/sliz_barel_mask.bmp" id="3_2kdqw"]
+
+[resource]
+albedo_texture = ExtResource("1_g4cc0")
+metallic = 1.0
+metallic_texture = ExtResource("2_cto8l")
+roughness_texture = ExtResource("3_2kdqw")
