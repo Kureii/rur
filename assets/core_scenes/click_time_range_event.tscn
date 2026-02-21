@@ -12,7 +12,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_mc5a4")
-action_slider_position = 0.64
+action_slider_position = 0.7045442641821837
 bad_fill_color = Color(0.6475143, 0, 0.24232274, 1)
 action_slider_fill_color = Color(0, 0.6440927, 0.95895094, 1)
 
@@ -72,12 +72,12 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="NeutralFillLeftSpacer" type="ColorRect" parent="SliderContainer/Slider/MarginInsideSlider/BadFill/HBoxContainer" unique_id=1465573352]
-custom_minimum_size = Vector2(123, 0)
+custom_minimum_size = Vector2(198, 0)
 layout_mode = 2
 color = Color(0.6475143, 0, 0.24232274, 1)
 
 [node name="NeutralFill" type="ColorRect" parent="SliderContainer/Slider/MarginInsideSlider/BadFill/HBoxContainer" unique_id=2055555805]
-custom_minimum_size = Vector2(246, 32)
+custom_minimum_size = Vector2(396, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
@@ -93,12 +93,12 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="GoodFillLeftSpacer" type="ColorRect" parent="SliderContainer/Slider/MarginInsideSlider/BadFill/HBoxContainer/NeutralFill/HBoxContainer" unique_id=511791898]
-custom_minimum_size = Vector2(61.5, 0)
+custom_minimum_size = Vector2(99, 0)
 layout_mode = 2
 color = Color(0.8392157, 0.41960785, 0, 1)
 
 [node name="GoodFill" type="ColorRect" parent="SliderContainer/Slider/MarginInsideSlider/BadFill/HBoxContainer/NeutralFill/HBoxContainer" unique_id=1054721903]
-custom_minimum_size = Vector2(123, 0)
+custom_minimum_size = Vector2(198, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
@@ -122,7 +122,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 0
 
 [node name="ActionSliderLeftSpacer" type="ReferenceRect" parent="SliderContainer/Slider/MarginOutsiteSlider/MarginOutsideContainer" unique_id=985941533]
-custom_minimum_size = Vector2(311.68, 50)
+custom_minimum_size = Vector2(554.4763, 50)
 layout_mode = 2
 border_width = 0.0
 editor_only = false
@@ -135,7 +135,7 @@ size_flags_vertical = 4
 color = Color(0, 0.6440927, 0.95895094, 1)
 
 [node name="ActionSliderRightSpacer" type="ReferenceRect" parent="SliderContainer/Slider/MarginOutsiteSlider/MarginOutsideContainer" unique_id=380085230]
-custom_minimum_size = Vector2(175.32, 50)
+custom_minimum_size = Vector2(232.52367, 50)
 layout_mode = 2
 border_width = 0.0
 editor_only = false

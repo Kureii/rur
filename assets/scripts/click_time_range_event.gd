@@ -184,3 +184,21 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action("space"):
 		running = false
+		var color = _get_zone_at(action_slider_position)
+		print("Stopped on: ", color)
+
+func _get_zone_at(pos: float) -> String:
+	var n_left  = neutral_position_ratio * (1.0 - neutral_size_ratio)
+	var n_right = n_left + neutral_size_ratio
+
+	var g_left  = n_left + good_position_ratio * (neutral_size_ratio * (1.0 - good_size_ratio))
+	var g_right = g_left + neutral_size_ratio * good_size_ratio
+
+	var center = pos + action_slider_size.x * 0.5 / slider_size.x
+
+	if center >= g_left and center <= g_right:
+		return "good (green)"
+	elif center >= n_left and center <= n_right:
+		return "neutral (orange)"
+	else:
+		return "bad (red)"
