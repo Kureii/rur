@@ -14,21 +14,18 @@ void vertex() {
 
 
 void fragment() {
-	// hloubka scény z depth bufferu
 	float raw_depth = texture(depth_texture, SCREEN_UV).r;
 	vec4 scene_pos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, raw_depth, 1.0);
 	scene_pos.xyz /= scene_pos.w;
 	
-	// hloubka aktuálního fragmentu
 	vec4 frag_pos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, FRAGCOORD.z, 1.0);
 	frag_pos.xyz /= frag_pos.w;
 	
-	// rozdíl = jak blízko je průnik
 	float diff = abs(scene_pos.z - frag_pos.z);
 	
 	float intersect = 1.0 - smoothstep(0.0, intersect_width, diff);
 	
-	ALBEDO = mix(camera_color.rgb, intersect_color.rgb, intersect);//vec3(intersect * clamp(world_y * 0.25 + 0.5,0.0,1.0));
+	ALBEDO = mix(camera_color.rgb, intersect_color.rgb, intersect);
 	ALPHA = mix(camera_color.a, intersect_color.a, intersect * (1.0-clamp(world_y * 0.25 + 0.5,0.0,1.0)));
 	ALPHA *= 1.0-clamp(world_y * 0.25 + 0.5,0.0,1.0);
 	ALPHA += mix(0.0, intersect_color.a, intersect);
