@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://c44w4d3f2amv8"]
+
+[ext_resource type="Script" uid="uid://cm1mh50v3g8ds" path="res://assets/scripts/button_game.gd" id="1_m7pky"]
+
+[node name="ButtonGame" type="Control" unique_id=1811086464]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m7pky")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1960330954]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=552169456]
+layout_mode = 2
+color = Color(0.03, 0.03, 0.03, 0.85490197)
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer" unique_id=433405416]
+custom_minimum_size = Vector2(1200, 600)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect2" unique_id=384739247]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect2/MarginContainer" unique_id=270581862]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="VisualButton01" type="ColorRect" parent="MarginContainer/ColorRect2/MarginContainer/HBoxContainer" unique_id=2039922031]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+color = Color(0.32544088, 0.3254409, 0.32544088, 1)
+
+[node name="LogicalButton01" type="Button" parent="MarginContainer/ColorRect2/MarginContainer/HBoxContainer/VisualButton01" unique_id=773032907]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="VisualButton02" type="ColorRect" parent="MarginContainer/ColorRect2/MarginContainer/HBoxContainer" unique_id=820586515]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+color = Color(0.3254902, 0.3254902, 0.3254902, 1)
+
+[node name="LogicalButton02" type="Button" parent="MarginContainer/ColorRect2/MarginContainer/HBoxContainer/VisualButton02" unique_id=714468329]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="VisualButton03" type="ColorRect" parent="MarginContainer/ColorRect2/MarginContainer/HBoxContainer" unique_id=775100032]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+color = Color(0, 0.5294118, 0, 1)
+
+[node name="LogicalButton03" type="Button" parent="MarginContainer/ColorRect2/MarginContainer/HBoxContainer/VisualButton03" unique_id=1384651734]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="VisualButton04" type="ColorRect" parent="MarginContainer/ColorRect2/MarginContainer/HBoxContainer" unique_id=488832522]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+color = Color(0.3254902, 0.3254902, 0.3254902, 1)
+
+[node name="LogicalButton04" type="Button" parent="MarginContainer/ColorRect2/MarginContainer/HBoxContainer/VisualButton04" unique_id=386169466]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[connection signal="pressed" from="MarginContainer/ColorRect2/MarginContainer/HBoxContainer/VisualButton01/LogicalButton01" to="." method="_on_button_01_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect2/MarginContainer/HBoxContainer/VisualButton02/LogicalButton02" to="." method="_on_button_02_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect2/MarginContainer/HBoxContainer/VisualButton03/LogicalButton03" to="." method="_on_button_03_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect2/MarginContainer/HBoxContainer/VisualButton04/LogicalButton04" to="." method="_on_button_04_pressed"]

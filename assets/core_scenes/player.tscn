@@ -5,8 +5,9 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i14mi"]
 
-[node name="Node3D" type="CharacterBody3D" unique_id=453805534]
+[node name="Node3D" type="CharacterBody3D" unique_id=453805534 node_paths=PackedStringArray("player_mesh")]
 script = ExtResource("1_0c8fa")
+player_mesh = NodePath("PlayerNode")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=378544446]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99775195, 0)

@@ -12,7 +12,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_mc5a4")
-action_slider_position = 0.7045442641821837
+action_slider_position = 0.6367301480492998
 bad_fill_color = Color(0.6475143, 0, 0.24232274, 1)
 action_slider_fill_color = Color(0, 0.6440927, 0.95895094, 1)
 
@@ -122,7 +122,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 0
 
 [node name="ActionSliderLeftSpacer" type="ReferenceRect" parent="SliderContainer/Slider/MarginOutsiteSlider/MarginOutsideContainer" unique_id=985941533]
-custom_minimum_size = Vector2(554.4763, 50)
+custom_minimum_size = Vector2(501.10663, 50)
 layout_mode = 2
 border_width = 0.0
 editor_only = false
@@ -135,7 +135,7 @@ size_flags_vertical = 4
 color = Color(0, 0.6440927, 0.95895094, 1)
 
 [node name="ActionSliderRightSpacer" type="ReferenceRect" parent="SliderContainer/Slider/MarginOutsiteSlider/MarginOutsideContainer" unique_id=380085230]
-custom_minimum_size = Vector2(232.52367, 50)
+custom_minimum_size = Vector2(285.89337, 50)
 layout_mode = 2
 border_width = 0.0
 editor_only = false
