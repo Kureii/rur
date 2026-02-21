@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bkaepcwpb604e"]
+
+[ext_resource type="Texture2D" uid="uid://wdsa1rynjsrh" path="res://assets/textures/models/ovator/davkovac_BC.png" id="1_lrd37"]
+[ext_resource type="Texture2D" uid="uid://c144g1cafdux8" path="res://assets/textures/models/ovator/davkovac_ARM.png" id="2_sqlkt"]
+[ext_resource type="Texture2D" uid="uid://dsxeufrqkjuby" path="res://assets/textures/models/ovator/sliz_davkovac.bmp" id="3_vljf1"]
+
+[resource]
+albedo_texture = ExtResource("1_lrd37")
+metallic = 1.0
+metallic_texture = ExtResource("2_sqlkt")
+roughness_texture = ExtResource("3_vljf1")

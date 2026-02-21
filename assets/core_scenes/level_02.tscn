@@ -135,6 +135,10 @@ mesh = ExtResource("10_jncdu")
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 7.2618937, 4.7683716e-07, -4.588088)
 mesh = ExtResource("10_jncdu")
 
+[node name="MechanicalBelts3" type="MeshInstance3D" parent="." unique_id=1219555878]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 13.733305, 4.7683716e-07, -4.588088)
+mesh = ExtResource("10_jncdu")
+
 [node name="SkrinVelka" type="MeshInstance3D" parent="." unique_id=1739712452]
 transform = Transform3D(-0.20951618, 0, -0.9778052, 0, 1, 0, 0.9778052, 0, -0.20951618, 10.651428, 0, 3.3392477)
 mesh = ExtResource("11_sjs0n")
