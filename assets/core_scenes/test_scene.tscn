@@ -47,10 +47,10 @@ size = Vector3(2.175, 2.97, 0.395)
 
 [sub_resource type="Curve3D" id="Curve3D_ucjp8"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.2959146, -0.006514445, -6.7634745, 0, 0, 0, 0, 0, 0, -6.276655, -0.006514445, -1.6598539, 0, 0, 0, 0, 0, 0, 2.6594973, -0.006514445, -1.2746754, 0, 0, 0, 0, 0, 0, 2.5632029, -0.006514445, -4.1827755, 0, 0, 0, 0, 0, 0, 11.961569, -0.006514445, -4.2598114),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.4840975, -0.00651443, -6.1885586, 0, 0, 0, 0, 0, 0, -6.0153284, -0.00651443, -6.154669, 0, 0, 0, 0, 0, 0, -5.990409, -0.00651443, -1.797328, 0, 0, 0, 0, 0, 0, 5.1503353, -0.00651443, -1.7785721, 0, 0, 0, 0, 0, 0, 5.036417, -0.00651443, -6.1936283, 0, 0, 0, 0, 0, 0, 13.499453, -0.0065436363, -6.2163715),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
-point_count = 5
+point_count = 6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1n6gp"]
 emission_enabled = true
@@ -140,11 +140,10 @@ text = "E"
 horizontal_alignment = 1
 
 [node name="ClickTimeRangeEvent" parent="UI" unique_id=1541085833 instance=ExtResource("5_o2qp1")]
-visible = false
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
 speed = 5.0
-action_slider_position = 0.03379293713545806
+action_slider_position = 0.5935270774682877
 bad_fill_color = Color(0.35684976, 0, 0.11989654, 1)
 neutral_fill_color = Color(0.56100917, 0.2719489, 1.92523e-07, 1)
 good_fill_color = Color(0, 0.5038379, 0, 1)
@@ -312,6 +311,7 @@ layout_mode = 1
 player = NodePath("../../Player")
 
 [node name="ButtonGame" parent="UI" unique_id=1811086464 instance=ExtResource("10_v2bml")]
+visible = false
 layout_mode = 1
 
 [node name="GameOver" type="Control" parent="UI" unique_id=1831243155]
@@ -428,7 +428,7 @@ length = 5.0
 volume_top = -0.015
 
 [node name="Path3D" type="Path3D" parent="Levels/Level02" unique_id=819986924]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9627978, 1.571866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1385611, 1.571866)
 curve = SubResource("Curve3D_ucjp8")
 script = ExtResource("14_v2bml")
 spawn_time = 1.0
