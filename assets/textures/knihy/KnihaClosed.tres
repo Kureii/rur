@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cn3dn138cavbv"]
+
+[ext_resource type="Texture2D" uid="uid://dbklnvj1u8xif" path="res://assets/textures/knihy/closed/kniha_klosed_BC_v3.png" id="1_88iol"]
+
+[resource]
+albedo_texture = ExtResource("1_88iol")

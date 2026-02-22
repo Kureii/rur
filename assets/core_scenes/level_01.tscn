@@ -4,18 +4,25 @@
 [ext_resource type="ArrayMesh" uid="uid://d3b708d1c4ook" path="res://assets/meshes/static/wall/skrinka.obj" id="2_01tgr"]
 [ext_resource type="Material" uid="uid://ou8l73je8qwu" path="res://assets/materials/Levels/Level1/Level1_Zdi.tres" id="2_pyfxo"]
 [ext_resource type="Material" uid="uid://bjnpc0rdq0okg" path="res://assets/materials/Levels/Level1/Level1_Zem.tres" id="3_tp8tp"]
+[ext_resource type="Material" uid="uid://dy3cmw66yg72d" path="res://assets/materials/Sloup/Sloup.tres" id="4_4xf3k"]
 [ext_resource type="Material" uid="uid://nta0dld40tja" path="res://assets/materials/skrin/skrin.tres" id="4_07o3q"]
 [ext_resource type="ArrayMesh" uid="uid://duwf5skju3vix" path="res://assets/meshes/static/skrin_velka.obj" id="4_b6h8f"]
+[ext_resource type="Material" uid="uid://dxvpn7a6rojia" path="res://assets/materials/Levels/Doors/Doors.tres" id="4_s14b7"]
 [ext_resource type="ArrayMesh" uid="uid://bclwcsvhl0tso" path="res://assets/meshes/static/barel/barel.obj" id="5_heiac"]
 [ext_resource type="ArrayMesh" uid="uid://pnfdjmrqt4iv" path="res://assets/meshes/static/box/suplik.obj" id="6_bm5u6"]
+[ext_resource type="Material" uid="uid://j3tq45fduqpr" path="res://assets/materials/MoreVsechnoKovove.tres" id="6_toyfu"]
 [ext_resource type="ArrayMesh" uid="uid://b15d78gddq3hx" path="res://assets/meshes/static/krabice/krabice_otevrena.obj" id="7_1bffx"]
 [ext_resource type="ArrayMesh" uid="uid://clx5togyyfurt" path="res://assets/meshes/static/krabice/krabice_rozbita.obj" id="8_ecglt"]
 [ext_resource type="ArrayMesh" uid="uid://112vckvj3s1p" path="res://assets/meshes/static/krabice/krabice_zavrena.obj" id="9_x51rt"]
+[ext_resource type="Material" uid="uid://cgpljmyrt2dmq" path="res://assets/materials/boxes/open/allBoxesV2.tres" id="10_4xf3k"]
+[ext_resource type="Material" uid="uid://bgoahpboot314" path="res://assets/materials/boxes/open/allBoxes.tres" id="10_17swj"]
 [ext_resource type="ArrayMesh" uid="uid://cky5lvctj51au" path="res://assets/meshes/static/kniha/kniha_otvrena.obj" id="10_bsn7y"]
 [ext_resource type="Material" uid="uid://bfnk3tilhyrc8" path="res://assets/materials/boxes/open/BoxOpenV2.tres" id="11_4xf3k"]
 [ext_resource type="ArrayMesh" uid="uid://bgla5cbieybd0" path="res://assets/meshes/static/kniha/kniha_zavrena.obj" id="11_mh75q"]
 [ext_resource type="ArrayMesh" uid="uid://xnqti0dvdf6l" path="res://assets/meshes/static/sloup/sloup.obj" id="12_5d7oh"]
 [ext_resource type="ArrayMesh" uid="uid://bbl0bnw06fcr0" path="res://assets/meshes/static/svetlo/svetlo.obj" id="13_pyfxo"]
+[ext_resource type="Material" uid="uid://cn3dn138cavbv" path="res://assets/textures/knihy/KnihaClosed.tres" id="15_aoido"]
+[ext_resource type="Material" uid="uid://dq636ne0ftrx4" path="res://assets/textures/knihy/KnihaOpen.tres" id="17_o2dc7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mh75q"]
 friction = 0.55
@@ -81,6 +88,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9796829, 0.016974345, 0.62
 mesh = ExtResource("1_aasjv")
 surface_material_override/0 = ExtResource("2_pyfxo")
 surface_material_override/1 = ExtResource("3_tp8tp")
+surface_material_override/2 = ExtResource("4_s14b7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level01" unique_id=1775965044]
 physics_material_override = SubResource("PhysicsMaterial_mh75q")
@@ -91,19 +99,23 @@ shape = SubResource("ConcavePolygonShape3D_pyfxo")
 [node name="StaticObjects" type="Node3D" parent="." unique_id=2001271763]
 
 [node name="Sloup" type="MeshInstance3D" parent="StaticObjects" unique_id=997304852]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.787955, 0.009619474, 5.1181545)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.787955, -0.6874188, 5.1181545)
+material_override = ExtResource("4_4xf3k")
 mesh = ExtResource("12_5d7oh")
 
 [node name="Svetlo" type="MeshInstance3D" parent="StaticObjects" unique_id=1984215004]
 transform = Transform3D(-0.009983119, 0, -0.99995023, 0, 1, 0, 0.99995023, 0, -0.009983119, 3.9401965, 2.755898, 2.8457267)
+material_override = ExtResource("6_toyfu")
 mesh = ExtResource("13_pyfxo")
 
 [node name="Svetlo2" type="MeshInstance3D" parent="StaticObjects" unique_id=984424143]
 transform = Transform3D(-0.009983119, 0, -0.99995023, 0, 1, 0, 0.99995023, 0, -0.009983119, 3.9401965, 2.755898, -2.366617)
+material_override = ExtResource("6_toyfu")
 mesh = ExtResource("13_pyfxo")
 
 [node name="Sloup2" type="MeshInstance3D" parent="StaticObjects" unique_id=1582360611]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7372494, 0.007155299, -0.12430954)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7372494, -0.6898829, -0.12430954)
+material_override = ExtResource("4_4xf3k")
 mesh = ExtResource("12_5d7oh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticObjects/Sloup2" unique_id=2139135249]
@@ -114,6 +126,7 @@ shape = SubResource("BoxShape3D_5d7oh")
 
 [node name="Skrinka" type="MeshInstance3D" parent="StaticObjects" unique_id=425885216]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.7526805, 1.3013793, -2.351287)
+material_override = ExtResource("6_toyfu")
 mesh = ExtResource("2_01tgr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticObjects/Skrinka" unique_id=500104037]
@@ -135,34 +148,42 @@ shape = SubResource("BoxShape3D_heiac")
 
 [node name="Suplik21" type="MeshInstance3D" parent="StaticObjects/SkrinVelka" unique_id=1892472960]
 transform = Transform3D(0.94817996, 0, -0.3177351, 0, 1, 0, 0.3177351, 0, 0.94817996, 0.571734, 1.0387251, 0.09948659)
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik20" type="MeshInstance3D" parent="StaticObjects/SkrinVelka" unique_id=866336539]
 transform = Transform3D(0.9489646, 0, 0.3153843, 0, 1, 0, -0.3153843, 0, 0.9489646, -0.52500147, 1.0145973, 0.16731048)
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik19" type="MeshInstance3D" parent="StaticObjects/SkrinVelka" unique_id=1884405704]
 transform = Transform3D(0.9808571, 0, 0.19473095, 0, 1, 0, -0.19473095, 0, 0.9808571, -0.009952128, 0.5565771, -0.010211706)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik18" type="MeshInstance3D" parent="StaticObjects/SkrinVelka" unique_id=711066747]
 transform = Transform3D(0.9296032, 0, 0.36856282, 0, 1, 0, -0.36856282, 0, 0.9296032, 0.15081435, 2.403255, -0.04899144)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik17" type="MeshInstance3D" parent="StaticObjects/SkrinVelka" unique_id=1452902060]
 transform = Transform3D(0.8554186, 0, -0.51793754, 0, 1, 0, 0.51793754, 0, 0.8554186, -0.42299515, 1.9452348, 0.055664063)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik16" type="MeshInstance3D" parent="StaticObjects/SkrinVelka" unique_id=438753684]
 transform = Transform3D(0.9348506, 0, -0.35504174, 0, 1, 0, 0.35504174, 0, 0.9348506, -0.012773752, 1.4872146, 0.1354897)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="KnihaZavrena2" type="MeshInstance3D" parent="StaticObjects/SkrinVelka" unique_id=132244729]
 transform = Transform3D(0.30600566, 0.9513756, -0.035294116, -0.109427564, -0.0016781688, -0.99399316, -0.94572, 0.30802977, 0.10359315, 0.4600736, 1.5527415, 0.11784959)
+material_override = ExtResource("15_aoido")
 mesh = ExtResource("11_mh75q")
 
 [node name="KnihaZavrena" type="MeshInstance3D" parent="StaticObjects/SkrinVelka" unique_id=1699410136]
 transform = Transform3D(0.06385818, 0.44671318, 0.8923954, -0.03188445, 0.8946772, -0.44557384, -0.9974495, 0, 0.07137567, -0.33559054, 2.4093797, -0.057832718)
+material_override = ExtResource("15_aoido")
 mesh = ExtResource("11_mh75q")
 
 [node name="SkrinVelka2" type="MeshInstance3D" parent="StaticObjects" unique_id=688105311]
@@ -178,34 +199,42 @@ shape = SubResource("BoxShape3D_heiac")
 
 [node name="Suplik28" type="MeshInstance3D" parent="StaticObjects/SkrinVelka2" unique_id=1681766322]
 transform = Transform3D(0.8954172, 0, -0.44522947, 0, 1, 0, 0.44522947, 0, 0.8954172, -0.20714355, 1.4973623, 0.3247137)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik27" type="MeshInstance3D" parent="StaticObjects/SkrinVelka2" unique_id=1460029217]
 transform = Transform3D(0.96106946, 0, -0.2763085, 0, 1, 0, 0.2763085, 0, 0.96106946, -0.37211967, 1.039342, 0.15524292)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik26" type="MeshInstance3D" parent="StaticObjects/SkrinVelka2" unique_id=535007773]
 transform = Transform3D(0.9999994, 0, 0.0014486313, 0, 1, 0, -0.0014486313, 0, 0.9999994, 0.5981271, 0.58132184, 0.17820764)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik25" type="MeshInstance3D" parent="StaticObjects/SkrinVelka2" unique_id=1857624603]
 transform = Transform3D(0.85822654, 0, -0.5132718, 0, 1, 0, 0.5132718, 0, 0.85822654, -0.32421923, 0.12330161, 0.06614947)
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik24" type="MeshInstance3D" parent="StaticObjects/SkrinVelka2" unique_id=384350949]
 transform = Transform3D(0.93677026, 0, -0.34994584, 0, 1, 0, 0.34994584, 0, 0.93677026, -0.5950091, 2.3886578, 0.14518571)
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik23" type="MeshInstance3D" parent="StaticObjects/SkrinVelka2" unique_id=1233747030]
 transform = Transform3D(0.9845463, 0, -0.17512615, 0, 1, 0, 0.17512615, 0, 0.9845463, -0.43786097, 1.9306377, 0.1967051)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik22" type="MeshInstance3D" parent="StaticObjects/SkrinVelka2" unique_id=333181023]
 transform = Transform3D(0.99030244, 0, 0.13893126, 0, 1, 0, -0.13893126, 0, 0.99030244, 0.4852326, 1.4726175, 0.19693375)
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("6_bm5u6")
 
 [node name="KnihaZavrena5" type="MeshInstance3D" parent="StaticObjects/SkrinVelka2" unique_id=2123972899]
 transform = Transform3D(0.8589067, 0.50791234, -0.065662056, -0.048132144, -0.047587074, -0.9977106, -0.509871, 0.8600977, -0.01642532, 0.44396853, 2.4841185, -0.120512724)
+material_override = ExtResource("15_aoido")
 mesh = ExtResource("11_mh75q")
 
 [node name="SkrinVelka3" type="MeshInstance3D" parent="StaticObjects" unique_id=335171046]
@@ -221,30 +250,37 @@ shape = SubResource("BoxShape3D_heiac")
 
 [node name="Suplik6" type="MeshInstance3D" parent="StaticObjects/SkrinVelka3" unique_id=1099463529]
 transform = Transform3D(0.8929948, 0, -0.45006755, 0, 1, 0, 0.45006755, 0, 0.8929948, 0.35185122, 2.3910391, 0.06871164)
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik5" type="MeshInstance3D" parent="StaticObjects/SkrinVelka3" unique_id=722639816]
 transform = Transform3D(0.99250144, 0, 0.12223312, 0, 1, 0, -0.12223312, 0, 0.99250144, -0.52431726, 1.9674004, 0.049738765)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik4" type="MeshInstance3D" parent="StaticObjects/SkrinVelka3" unique_id=882163049]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34132385, 1.5093802, 0.072941184)
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik7" type="MeshInstance3D" parent="StaticObjects/SkrinVelka3" unique_id=759231258]
 transform = Transform3D(0.9835778, 0, -0.18048482, 0, 1, 0, 0.18048482, 0, 0.9835778, -0.65013015, 1.5093802, 0.072941184)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik3" type="MeshInstance3D" parent="StaticObjects/SkrinVelka3" unique_id=1148365892]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48638844, 1.05136, 0.0961436)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48638844, 1.05136, 0.2692449)
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik2" type="MeshInstance3D" parent="StaticObjects/SkrinVelka3" unique_id=1882911224]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37925267, 0.5933398, 0.11934602)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37925267, 0.5933398, 0.37495553)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik" type="MeshInstance3D" parent="StaticObjects/SkrinVelka3" unique_id=912583111]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45604563, 0.13531965, 0.14254844)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45604563, 0.13531965, 0.3997568)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="SkrinVelka4" type="MeshInstance3D" parent="StaticObjects" unique_id=1021127950]
@@ -254,34 +290,42 @@ surface_material_override/0 = ExtResource("4_07o3q")
 
 [node name="Suplik12" type="MeshInstance3D" parent="StaticObjects/SkrinVelka4" unique_id=838798679]
 transform = Transform3D(0.4921653, 0, -0.8705024, 0, 1, 0, 0.8705024, 0, 0.4921653, -0.16613233, 2.388071, -0.011961341)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik11" type="MeshInstance3D" parent="StaticObjects/SkrinVelka4" unique_id=1064978029]
 transform = Transform3D(0.8929948, 0, -0.45006755, 0, 1, 0, 0.45006755, 0, 0.8929948, 0.52357537, 1.9108534, 0.04550922)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik10" type="MeshInstance3D" parent="StaticObjects/SkrinVelka4" unique_id=213343279]
 transform = Transform3D(0.99250144, 0, 0.12223312, 0, 1, 0, -0.12223312, 0, 0.99250144, -0.35259318, 1.4872146, 0.026536345)
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik9" type="MeshInstance3D" parent="StaticObjects/SkrinVelka4" unique_id=2124558958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51304793, 1.0291944, 0.049738765)
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik15" type="MeshInstance3D" parent="StaticObjects/SkrinVelka4" unique_id=402482956]
 transform = Transform3D(0.9835778, 0, -0.18048482, 0, 1, 0, 0.18048482, 0, 0.9835778, -0.47840607, 1.0291944, 0.049738765)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="Suplik8" type="MeshInstance3D" parent="StaticObjects/SkrinVelka4" unique_id=1533256131]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31466436, 0.57117414, 0.072941184)
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("6_bm5u6")
 
 [node name="KnihaZavrena4" type="MeshInstance3D" parent="StaticObjects/SkrinVelka4" unique_id=648434677]
 transform = Transform3D(0.60713196, 0.79346, -0.042626917, -0.0021191947, -0.052028086, -0.9986461, -0.7946002, 0.60639894, -0.029905977, 0.49654645, 2.4772048, -0.1025064)
+material_override = ExtResource("15_aoido")
 mesh = ExtResource("11_mh75q")
 
 [node name="KnihaZavrena3" type="MeshInstance3D" parent="StaticObjects/SkrinVelka4" unique_id=1756881856]
 transform = Transform3D(0.46246636, 0.88649625, -0.015862694, 0.041856393, -0.03969927, -0.99833494, -0.8856486, 0.4610322, -0.05546493, -0.6221128, 2.0249906, -0.02217555)
+material_override = ExtResource("15_aoido")
 mesh = ExtResource("11_mh75q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticObjects/SkrinVelka4" unique_id=1715516264]
@@ -303,6 +347,7 @@ shape = SubResource("BoxShape3D_heiac")
 
 [node name="Suplik14" type="MeshInstance3D" parent="StaticObjects/SkrinVelka5" unique_id=1514517454]
 transform = Transform3D(-0.76799417, 0, -0.6404589, 0, 1, 0, 0.6404589, 0, -0.76799417, 0.18109465, 2.3872323, -0.12839079)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="SkrinVelka6" type="MeshInstance3D" parent="StaticObjects" unique_id=967522042]
@@ -318,10 +363,12 @@ shape = SubResource("BoxShape3D_heiac")
 
 [node name="Suplik13" type="MeshInstance3D" parent="StaticObjects/SkrinVelka6" unique_id=722571031]
 transform = Transform3D(-0.97465265, 0, -0.22372629, 0, 1, 0, 0.22372629, 0, -0.97465265, 0.2695248, 2.4026494, -0.114370346)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("6_bm5u6")
 
 [node name="KnihaOtvrena3" type="MeshInstance3D" parent="StaticObjects/SkrinVelka6" unique_id=331449378]
 transform = Transform3D(-0.43917736, 0.03778752, -0.8976059, -0.0007284451, 0.99910027, 0.04241655, 0.8984008, 0.019282255, -0.43875417, -0.6364193, 2.4282532, -0.028167248)
+material_override = ExtResource("17_o2dc7")
 mesh = ExtResource("10_bsn7y")
 
 [node name="SkrinVelka7" type="MeshInstance3D" parent="StaticObjects" unique_id=565311593]
@@ -337,10 +384,12 @@ shape = SubResource("BoxShape3D_heiac")
 
 [node name="Barel" type="MeshInstance3D" parent="StaticObjects" unique_id=88412358]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1881638, 0.016973868, 4.0302258)
+material_override = ExtResource("6_toyfu")
 mesh = ExtResource("5_heiac")
 
 [node name="Barel2" type="MeshInstance3D" parent="StaticObjects" unique_id=719348854]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.186441, 0.016973868, 3.0146074)
+material_override = ExtResource("6_toyfu")
 mesh = ExtResource("5_heiac")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticObjects/Barel2" unique_id=1053671472]
@@ -351,6 +400,7 @@ shape = SubResource("BoxShape3D_bsn7y")
 
 [node name="Barel3" type="MeshInstance3D" parent="StaticObjects" unique_id=1699103936]
 transform = Transform3D(-0.034859017, -0.7986975, -0.6007222, 0.99127454, 0.048823975, -0.12243671, 0.12711953, -0.59974873, 0.79002666, 2.4119878, 0.3615839, 4.281148)
+material_override = ExtResource("6_toyfu")
 mesh = ExtResource("5_heiac")
 surface_material_override/0 = SubResource("StandardMaterial3D_bsn7y")
 
@@ -370,6 +420,7 @@ mass = 0.3
 shape = SubResource("ConvexPolygonShape3D_bsn7y")
 
 [node name="KrabiceOtevrena" type="MeshInstance3D" parent="DynamicObjects/RigidBody3D6/CollisionShape3D" unique_id=131041828]
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("7_1bffx")
 surface_material_override/0 = ExtResource("11_4xf3k")
 
@@ -381,7 +432,44 @@ mass = 0.2
 shape = SubResource("ConvexPolygonShape3D_mh75q")
 
 [node name="KrabiceRozbita" type="MeshInstance3D" parent="DynamicObjects/RigidBody3D8/CollisionShape3D" unique_id=1035867491]
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("8_ecglt")
+
+[node name="RigidBody3D10" type="RigidBody3D" parent="DynamicObjects" unique_id=1485953578]
+transform = Transform3D(0.48190665, 0, -0.87622255, 0, 1, 0, 0.87622255, 0, 0.48190665, -2.9140637, 0.020487346, -0.49897087)
+mass = 0.2
+
+[node name="RigidBody3D11" type="RigidBody3D" parent="DynamicObjects" unique_id=798892936]
+transform = Transform3D(0.48190665, 0, -0.87622255, 0, 1, 0, 0.87622255, 0, 0.48190665, -2.9140637, 0.020487346, -0.49897087)
+mass = 0.2
+
+[node name="RigidBody3D12" type="RigidBody3D" parent="DynamicObjects" unique_id=536871077]
+transform = Transform3D(0.48190665, 0, -0.87622255, 0, 1, 0, 0.87622255, 0, 0.48190665, -2.011367, 0.020487346, -0.49897087)
+mass = 0.2
+
+[node name="RigidBody3D13" type="RigidBody3D" parent="DynamicObjects" unique_id=1790283148]
+transform = Transform3D(0.48190665, 0, -0.87622255, 0, 1, 0, 0.87622255, 0, 0.48190665, -2.011367, 0.020487346, 0.41983593)
+mass = 0.2
+
+[node name="RigidBody3D14" type="RigidBody3D" parent="DynamicObjects" unique_id=448236604]
+transform = Transform3D(0.48190665, 0, -0.87622255, 0, 1, 0, 0.87622255, 0, 0.48190665, -2.917185, 0.020487346, 0.41983593)
+mass = 0.2
+
+[node name="RigidBody3D15" type="RigidBody3D" parent="DynamicObjects" unique_id=12088033]
+transform = Transform3D(0.48190665, 0, -0.87622255, 0, 1, 0, 0.87622255, 0, 0.48190665, -2.917185, 0.020487346, 1.3588712)
+mass = 0.2
+
+[node name="RigidBody3D16" type="RigidBody3D" parent="DynamicObjects" unique_id=601836352]
+transform = Transform3D(0.48190665, 0, -0.87622255, 0, 1, 0, 0.87622255, 0, 0.48190665, -2.1459103, 0.020487346, 1.3588712)
+mass = 0.2
+
+[node name="RigidBody3D17" type="RigidBody3D" parent="DynamicObjects" unique_id=406977607]
+transform = Transform3D(0.48190665, 0, -0.87622255, 0, 1, 0, 0.87622255, 0, 0.48190665, -2.1459103, 0.020487346, -1.4404182)
+mass = 0.2
+
+[node name="RigidBody3D18" type="RigidBody3D" parent="DynamicObjects" unique_id=2036593234]
+transform = Transform3D(0.48190665, 0, -0.87622255, 0, 1, 0, 0.87622255, 0, 0.48190665, -2.9847894, 0.020487346, -1.4404182)
+mass = 0.2
 
 [node name="RigidBody3D7" type="RigidBody3D" parent="DynamicObjects" unique_id=652894466]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6074, 0.016974345, -0.92784524)
@@ -390,6 +478,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6074, 0.016974345, -0.92784
 shape = SubResource("ConvexPolygonShape3D_17swj")
 
 [node name="KrabiceZavrena" type="MeshInstance3D" parent="DynamicObjects/RigidBody3D7/CollisionShape3D" unique_id=1332912147]
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("9_x51rt")
 
 [node name="RigidBody3D5" type="RigidBody3D" parent="DynamicObjects" unique_id=1343394853]
@@ -401,6 +490,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006336212, 0, 0.20083904)
 shape = SubResource("ConvexPolygonShape3D_pyfxo")
 
 [node name="KrabiceRozbita3" type="MeshInstance3D" parent="DynamicObjects/RigidBody3D5/CollisionShape3D" unique_id=812026032]
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("8_ecglt")
 
 [node name="RigidBody3D9" type="RigidBody3D" parent="DynamicObjects" unique_id=1733412332]
@@ -411,6 +501,7 @@ mass = 0.25
 shape = SubResource("ConvexPolygonShape3D_4xf3k")
 
 [node name="KrabiceRozbita2" type="MeshInstance3D" parent="DynamicObjects/RigidBody3D9/CollisionShape3D" unique_id=1631760029]
+material_override = ExtResource("10_4xf3k")
 mesh = ExtResource("8_ecglt")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="DynamicObjects" unique_id=509353735]
@@ -423,6 +514,7 @@ max_contacts_reported = 3
 shape = SubResource("ConvexPolygonShape3D_5d7oh")
 
 [node name="KrabiceOtevrena2" type="MeshInstance3D" parent="DynamicObjects/RigidBody3D/CollisionShape3D" unique_id=1406811623]
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("7_1bffx")
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="DynamicObjects" unique_id=352564379]
@@ -435,6 +527,7 @@ shape = SubResource("ConvexPolygonShape3D_tp8tp")
 
 [node name="KrabiceRozbita4" type="MeshInstance3D" parent="DynamicObjects/RigidBody3D2/CollisionShape3D" unique_id=98751119]
 transform = Transform3D(0.99999994, -7.450581e-09, -4.656613e-10, 0, 0.99999994, -7.566996e-10, 0, -4.3655746e-09, 1.0000001, 0, 0, 0)
+material_override = ExtResource("10_17swj")
 mesh = ExtResource("8_ecglt")
 
 [node name="RigidBody3D3" type="RigidBody3D" parent="DynamicObjects" unique_id=1205913321]
@@ -447,6 +540,7 @@ shape = SubResource("BoxShape3D_17swj")
 
 [node name="KnihaOtvrena2" type="MeshInstance3D" parent="DynamicObjects/RigidBody3D3/CollisionShape3D" unique_id=1667497872]
 transform = Transform3D(1, 0, 0, -7.450581e-09, 1, 7.450581e-09, 0, -1.4901161e-08, 0.99999994, 0.0017352104, -0.03841199, -0.0006532669)
+material_override = ExtResource("17_o2dc7")
 mesh = ExtResource("10_bsn7y")
 
 [node name="RigidBody3D4" type="RigidBody3D" parent="DynamicObjects" unique_id=1290845342]
@@ -459,16 +553,17 @@ shape = SubResource("BoxShape3D_4xf3k")
 
 [node name="KnihaOtvrena" type="MeshInstance3D" parent="DynamicObjects/RigidBody3D4/CollisionShape3D" unique_id=341243109]
 transform = Transform3D(1, 3.7252903e-09, 0, 3.7252903e-09, 1, 7.450581e-09, 2.9802322e-08, 0, 1, 0.0017346144, -0.038412027, -0.0006518364)
+material_override = ExtResource("17_o2dc7")
 mesh = ExtResource("10_bsn7y")
 
 [node name="Light" type="Node3D" parent="." unique_id=921320399]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Light" unique_id=1202403811]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.882464, 2.697134, 2.7529583)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3217726, 2.697134, 2.7529583)
 light_color = Color(0.52, 0.72800004, 1, 1)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Light" unique_id=2037092485]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.882464, 2.697134, -2.4575968)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4910922, 2.697134, -2.4575968)
 light_color = Color(0.52, 0.72800004, 1, 1)
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Light" unique_id=1933182024]
@@ -476,5 +571,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.606552, 2.697134, 2.752958
 light_color = Color(0.52, 0.72800004, 1, 1)
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Light" unique_id=240717554]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.606552, 2.697134, -2.4575968)
-light_color = Color(0.52, 0.72800004, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4936359, 1.051511, -1.6944858)
+light_color = Color(0.79071885, 0.7070269, 0.5485897, 1)
+light_energy = 5.699
+light_volumetric_fog_energy = 4.683
+omni_range = 3.1954248
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Light" unique_id=2037140421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.514646, 1.8816564, 2.9209032)
+light_color = Color(0.92076284, 0.60459274, 0.76410323, 1)
+light_energy = 2.651
+light_volumetric_fog_energy = 10.207
+omni_range = 2.0338352
