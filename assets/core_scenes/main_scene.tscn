@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c17iibly3huds" path="res://assets/scripts/game.gd" id="1_4wccp"]
 [ext_resource type="PackedScene" uid="uid://b5kwrbaijojyt" path="res://assets/core_scenes/player.tscn" id="2_o1ycs"]
-[ext_resource type="PackedScene" uid="uid://dj7qo4i2g87dg" path="res://assets/core_scenes/click_time_range_event.tscn" id="3_uurnr"]
+[ext_resource type="Script" uid="uid://bqog5soopv0gi" path="res://assets/scripts/click_time_range_event.gd" id="3_7cjtb"]
 [ext_resource type="Texture2D" uid="uid://dm5qvppmyi6mg" path="res://assets/textures/2d/sus_bar/sus_bar_separe.png" id="4_syd11"]
 [ext_resource type="Texture2D" uid="uid://bp2l3yukhmmqu" path="res://assets/textures/2d/sus_bar/sus_bar_2048.png" id="5_e2g6m"]
 [ext_resource type="Texture2D" uid="uid://cmf667oy48nlk" path="res://assets/textures/2d/sus_bar/sus_bar_inside.png" id="6_yuelw"]
 [ext_resource type="Script" uid="uid://bewwimh4x551e" path="res://assets/scripts/sus_bar.gd" id="7_vco0y"]
 [ext_resource type="Script" uid="uid://cnlu4cvh0p3q2" path="res://assets/scripts/code_source.gd" id="8_7cjtb"]
 [ext_resource type="PackedScene" uid="uid://d4eh24xaiqvci" path="res://assets/core_scenes/code.tscn" id="9_6lgvf"]
+[ext_resource type="Texture2D" uid="uid://c135ulw5pcw52" path="res://assets/textures/2d/tutorial_papir.png" id="9_yuelw"]
 [ext_resource type="PackedScene" uid="uid://c44w4d3f2amv8" path="res://assets/core_scenes/button_game.tscn" id="10_18erw"]
 [ext_resource type="PackedScene" uid="uid://11re4ouahoen" path="res://assets/core_scenes/level_01.tscn" id="11_mkuoi"]
 [ext_resource type="PackedScene" uid="uid://b0p741oe01pxm" path="res://assets/core_scenes/camera.tscn" id="12_3hvx4"]
@@ -20,7 +21,9 @@
 [ext_resource type="Script" uid="uid://5t3up78kvxql" path="res://assets/scripts/take_item.gd" id="17_7jf5a"]
 [ext_resource type="Script" uid="uid://ckfx4fhclkv35" path="res://assets/scripts/destroy_belt.gd" id="17_uurnr"]
 [ext_resource type="Texture2D" uid="uid://dir5wn21lpi0d" path="res://assets/textures/2d/smoke.png" id="19_e2g6m"]
-[ext_resource type="Script" uid="uid://c3fh2a4ttsbt2" path="res://assets/core_scenes/smoke_emmitor.gd" id="20_yuelw"]
+[ext_resource type="Script" uid="uid://c3fh2a4ttsbt2" path="res://assets/scripts/smoke_emmitor.gd" id="20_yuelw"]
+[ext_resource type="Script" uid="uid://p16a5mtceh6r" path="res://assets/scripts/conveyor_belt_path-paper.gd" id="22_vco0y"]
+[ext_resource type="Script" uid="uid://ci28bebx8akrc" path="res://assets/scripts/range_minigame_enable.gd" id="23_7cjtb"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_t3pxi"]
 
@@ -106,10 +109,13 @@ size = Vector2(0.5, 0.5)
 
 [sub_resource type="Curve3D" id="Curve3D_e2g6m"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.34906292, 1.1486951, -0.24485397, 0, 0, 0, 0, 0, 0, 5.1262074, 1.1486951, -0.19668388, 0, 0, 0, 0, 0, 0, 5.125372, 1.1486951, -4.59865, 0, 0, 0, 0, 0, 0, 18.09904, 1.1486951, -4.4862547, -0.030672073, 0.068380594, -1.0983858, 0.030672073, -0.068380594, 1.0983858, 18.177803, 1.0002748, 0.11057854, 0, 0, 0, 0, 0, 0, 17.95868, 0.11802529, 1.068963),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.34906292, 1.1486951, -0.24485397, 0, 0, 0, 0, 0, 0, 5.1262074, 1.1486951, -0.19668388, 0, 0, 0, 0, 0, 0, 5.125372, 1.1486951, -4.59865, 0, 0, 0, 0, 0, 0, 18.09904, 1.1486951, -4.4862547, -0.030672073, 0.068380594, -1.0983858, 0.030672073, -0.068380594, 1.0983858, 18.177803, 1.0002748, 0.48548222, 0, 0, 0, 0, 0, 0, 17.95868, 0.11802529, 1.4438667),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vco0y"]
+size = Vector3(3.045166, 0.9848633, 2.3533936)
 
 [sub_resource type="Environment" id="Environment_4wccp"]
 background_energy_multiplier = 0.0
@@ -134,7 +140,7 @@ shape = SubResource("WorldBoundaryShape3D_t3pxi")
 
 [node name="Player" parent="." unique_id=453805534 node_paths=PackedStringArray("game_over_screen") instance=ExtResource("2_o1ycs")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3304982, 1.66893e-06, 3.2297878)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5860567, 1.66893e-06, 2.800437)
 camera_lerp_speed = 1.9
 game_over_screen = NodePath("../UI/GameOver")
 
@@ -190,17 +196,77 @@ theme_override_font_sizes/font_size = 32
 text = "E"
 horizontal_alignment = 1
 
-[node name="ClickTimeRangeEvent" parent="UI" unique_id=1541085833 instance=ExtResource("3_uurnr")]
+[node name="Control" type="Control" parent="UI" unique_id=1342836555]
 visible = false
-custom_minimum_size = Vector2(1920, 1080)
+custom_minimum_size = Vector2(800, 40)
 layout_mode = 1
-speed = 5.0
-action_slider_position = 0.25290925792749513
-bad_fill_color = Color(0.35684976, 0, 0.11989654, 1)
-neutral_fill_color = Color(0.56100917, 0.2719489, 1.92523e-07, 1)
-good_fill_color = Color(0, 0.5038379, 0, 1)
-neutral_size_ratio = 0.24
-good_size_ratio = 0.2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_7cjtb")
+
+[node name="Background" type="ColorRect" parent="UI/Control" unique_id=128178508]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09, 0.09, 0.09, 0.2509804)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control" unique_id=1444062478]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="CloseButton" type="Button" parent="UI/Control/MarginContainer" unique_id=399001636]
+z_index = 10
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "🗙"
+flat = true
+
+[node name="SliderBG" type="ColorRect" parent="UI/Control" unique_id=1037035481]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 520.0
+offset_right = 1360.0
+offset_bottom = 560.0
+color = Color(0.6627451, 0, 0, 1)
+
+[node name="NeutralZone" type="ColorRect" parent="UI/Control/SliderBG" unique_id=2064148958]
+layout_mode = 0
+offset_left = 200.0
+offset_right = 600.0
+offset_bottom = 40.0
+color = Color(0.8392157, 0.41960785, 0, 1)
+
+[node name="GoodZone" type="ColorRect" parent="UI/Control/SliderBG/NeutralZone" unique_id=2066254145]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 300.0
+offset_bottom = 40.0
+color = Color(0, 0.8666667, 0, 1)
+
+[node name="ActionSlider" type="ColorRect" parent="UI/Control/SliderBG" unique_id=876385566]
+layout_mode = 0
+offset_left = 397.5
+offset_top = -5.0
+offset_right = 402.5
+offset_bottom = 45.0
+color = Color(0.30980393, 0.60784316, 1, 1)
 
 [node name="SUSBar" type="Control" parent="UI" unique_id=968033634]
 layout_mode = 1
@@ -296,7 +362,7 @@ grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="UI/CodeSource/MarginContainer" unique_id=577999234]
 layout_mode = 2
-color = Color(0.09, 0.09, 0.09, 0.8862745)
+color = Color(0.09, 0.09, 0.09, 0.24705882)
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/CodeSource/MarginContainer" unique_id=1634153579]
 layout_mode = 2
@@ -305,38 +371,43 @@ theme_override_constants/margin_top = 200
 theme_override_constants/margin_right = 300
 theme_override_constants/margin_bottom = 200
 
+[node name="ColorRect" type="TextureRect" parent="UI/CodeSource/MarginContainer/MarginContainer" unique_id=993559344]
+modulate = Color(0.98733336, 0.96, 1, 1)
+custom_minimum_size = Vector2(1300.555, 709.265)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_yuelw")
+expand_mode = 3
+stretch_mode = 5
+
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="UI/CodeSource/MarginContainer/MarginContainer" unique_id=2145846890]
 layout_mode = 2
 ratio = 1.5378
 
-[node name="ColorRect" type="ColorRect" parent="UI/CodeSource/MarginContainer/MarginContainer/AspectRatioContainer" unique_id=1222280344]
-layout_mode = 2
-color = Color(0.9, 0.85274994, 0.765, 1)
-
 [node name="MarginContainer" type="MarginContainer" parent="UI/CodeSource/MarginContainer/MarginContainer/AspectRatioContainer" unique_id=1931515106]
 layout_mode = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 30
+theme_override_constants/margin_left = 353
+theme_override_constants/margin_top = 77
+theme_override_constants/margin_right = 339
+theme_override_constants/margin_bottom = 94
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/CodeSource/MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer" unique_id=1668011293]
-layout_mode = 2
-
-[node name="Text1" type="RichTextLabel" parent="UI/CodeSource/MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/HBoxContainer" unique_id=1078764850]
+[node name="Text1" type="RichTextLabel" parent="UI/CodeSource/MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer" unique_id=1078764850]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 13
+text = "From: Boss
 
-[node name="VSeparator" type="VSeparator" parent="UI/CodeSource/MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/HBoxContainer" unique_id=579502927]
-layout_mode = 2
+To: Employee n. 33
 
-[node name="Text2" type="RichTextLabel" parent="UI/CodeSource/MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/HBoxContainer" unique_id=703651310]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 13
+Subject: Termination of Employment
+
+Dear Employee number #45662, (tohle je to cislo do kodu)
+
+I am writing to inform you that your employment is being terminated, effective immediately. To be honest, your efficiency is becoming a problem for our low standards.
+
+We have decided to replace you with a significantly cheaper workforce that doesn't work nearly as well. Please pack your things and exit the building."
 
 [node name="MarginContainer2" type="MarginContainer" parent="UI/CodeSource/MarginContainer" unique_id=1502472805]
 layout_mode = 2
@@ -474,14 +545,14 @@ thick = 0.02
 length = 5.0
 volume_top = -0.015
 
-[node name="Path3D" type="Path3D" parent="Levels/Level02" unique_id=819986924]
+[node name="PathShit" type="Path3D" parent="Levels/Level02" unique_id=819986924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1385611, 1.571866)
 curve = SubResource("Curve3D_ucjp8")
 script = ExtResource("15_4sdlk")
 spawn_time = 1.3
 max_spowned = 6
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Levels/Level02/Path3D" unique_id=1440996255]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Levels/Level02/PathShit" unique_id=1440996255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.583916, 0.29824805, -6.084917)
 material_override = ExtResource("16_o1ycs")
 lifetime = 1.3
@@ -490,7 +561,7 @@ randomness = 0.1
 process_material = SubResource("ParticleProcessMaterial_4wccp")
 draw_pass_1 = SubResource("SphereMesh_o1ycs")
 
-[node name="GPUParticlesAttractorBox3D" type="GPUParticlesAttractorBox3D" parent="Levels/Level02/Path3D" unique_id=1471006355]
+[node name="GPUParticlesAttractorBox3D" type="GPUParticlesAttractorBox3D" parent="Levels/Level02/PathShit" unique_id=1471006355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4933815, 0, -6.1662483)
 
 [node name="EmplaceTakeble" type="MeshInstance3D" parent="Levels/Level02" unique_id=754507386]
@@ -508,7 +579,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99938965, 0, 0.6933899)
 shape = SubResource("BoxShape3D_53lbx")
 
 [node name="Takeble" type="MeshInstance3D" parent="Levels/Level02" unique_id=494486105 node_paths=PackedStringArray("world_node", "emplace_node")]
-transform = Transform3D(0.84752977, 0, 0.5307479, 0, 1, 0, -0.5307479, 0, 0.84752977, 10.642328, 1.2073973, 2.6620035)
+transform = Transform3D(0.84752977, 0, 0.5307479, 0, 1, 0, -0.5307479, 0, 0.84752977, -10.677233, 1.2073973, -1.4322596)
 material_override = SubResource("StandardMaterial3D_4sl0j")
 mesh = SubResource("PrismMesh_v2bml")
 script = ExtResource("17_7jf5a")
@@ -533,14 +604,33 @@ process_material = SubResource("ParticleProcessMaterial_7cjtb")
 draw_pass_1 = SubResource("QuadMesh_6lgvf")
 script = ExtResource("20_yuelw")
 
-[node name="Path3D2" type="Path3D" parent="Levels/Level02" unique_id=1472956869]
+[node name="PathPaper" type="Path3D" parent="Levels/Level02" unique_id=1472956869]
 curve = SubResource("Curve3D_e2g6m")
+script = ExtResource("22_vco0y")
+spawn_time = 1.3
+max_spowned = 11
+
+[node name="RangeMinigame" type="Area3D" parent="Levels/Level02" unique_id=2035949177]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Level02/RangeMinigame" unique_id=1872939341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5464468, 0.5382707, 1.7403946)
+shape = SubResource("BoxShape3D_vco0y")
+disabled = true
+script = ExtResource("23_7cjtb")
+
+[node name="Door" type="MeshInstance3D" parent="Levels/Level02" unique_id=680335720]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.10512, 1.4328699, -0.20368195)
+visible = false
+mesh = SubResource("BoxMesh_53lbx")
+script = ExtResource("13_w5iin")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Levels/Level02/Door" unique_id=1886742484]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Level02/Door/AnimatableBody3D" unique_id=1460743129]
+shape = SubResource("BoxShape3D_4sl0j")
 
 [node name="Level03" parent="Levels" unique_id=693390534 instance=ExtResource("16_wkiio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.084, 0.045, -3.523)
-
-[node name="Level04" parent="Levels" unique_id=1902291642 instance=ExtResource("16_wkiio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.084, 0.045, -3.523)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.084, 0.045, -3.0668807)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1551875020]
 environment = SubResource("Environment_4wccp")
@@ -572,6 +662,7 @@ light_energy = 11.37
 spot_range = 6.16661
 spot_angle = 34.682533
 
+[connection signal="pressed" from="UI/Control/MarginContainer/CloseButton" to="UI/Control" method="_on_close_button_pressed"]
 [connection signal="pressed" from="UI/CodeSource/MarginContainer/MarginContainer2/CloseButton" to="UI/CodeSource" method="_on_close_button_pressed"]
 [connection signal="open_door" from="UI/Code" to="Levels/Level_01/Door" method="_on_open_door"]
 [connection signal="pressed" from="UI/GameOver/ColorRect/VBoxContainer/HBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
@@ -580,10 +671,14 @@ spot_angle = 34.682533
 [connection signal="body_exited" from="Levels/Level_01/CodeDocument" to="UI/CodeSource" method="_on_code_document_body_exited"]
 [connection signal="body_entered" from="Levels/Level_01/CodeDoor" to="UI/Code" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Levels/Level_01/CodeDoor" to="UI/Code" method="_on_area_3d_body_exited"]
-[connection signal="destroy" from="Levels/Level02/EmplaceTakeble" to="Levels/Level02/Path3D" method="_on_emplace_takeble_destroy"]
+[connection signal="destroy" from="Levels/Level02/EmplaceTakeble" to="Levels/Level02/PathShit" method="_on_emplace_takeble_destroy"]
 [connection signal="destroy" from="Levels/Level02/EmplaceTakeble" to="Levels/Level02/GPUParticles3D" method="_on_emplace_takeble_destroy"]
+[connection signal="destroy" from="Levels/Level02/EmplaceTakeble" to="Levels/Level02/PathPaper" method="_on_emplace_takeble_destroy"]
+[connection signal="destroy" from="Levels/Level02/EmplaceTakeble" to="Levels/Level02/RangeMinigame/CollisionShape3D" method="_on_emplace_takeble_destroy"]
 [connection signal="body_entered" from="Levels/Level02/EmplaceTakeble/Area3D" to="Levels/Level02/Takeble" method="_on_emplace_entered"]
 [connection signal="body_exited" from="Levels/Level02/EmplaceTakeble/Area3D" to="Levels/Level02/Takeble" method="_on_emplace_exited"]
 [connection signal="_emplace_item" from="Levels/Level02/Takeble" to="Levels/Level02/EmplaceTakeble" method="_on_takeble__emplace_item"]
 [connection signal="body_entered" from="Levels/Level02/Takeble/Area3D" to="Levels/Level02/Takeble" method="_on_player_entered"]
 [connection signal="body_exited" from="Levels/Level02/Takeble/Area3D" to="Levels/Level02/Takeble" method="_on_player_exited"]
+[connection signal="body_entered" from="Levels/Level02/RangeMinigame" to="UI/Control" method="_on_range_minigame_body_entered"]
+[connection signal="body_exited" from="Levels/Level02/RangeMinigame" to="UI/Control" method="_on_range_minigame_body_exited"]

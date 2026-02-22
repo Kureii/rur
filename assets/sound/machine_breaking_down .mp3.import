@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3agnu0xosql4"
+path="res://.godot/imported/machine_breaking_down .mp3-fec3ced2ab5a515fc8d213c843c68f7f.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/machine_breaking_down .mp3"
+dest_files=["res://.godot/imported/machine_breaking_down .mp3-fec3ced2ab5a515fc8d213c843c68f7f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

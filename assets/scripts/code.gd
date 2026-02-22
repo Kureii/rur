@@ -5,6 +5,7 @@ extends Control
 @export_color_no_alpha var warn_color: Color = Color("d4b700")
 @onready var player: RigidBody3D = %Player
 @onready var UI_element: Control =%TakeKey
+@onready var button_sound: AudioStreamPlayer= $ActiveButton
 
 signal open_door
 
@@ -66,39 +67,51 @@ func _close():
 
 func _on_button_1_pressed() -> void:
 	_set_number_text("1")
+	button_sound.play()
 
 func _on_button_2_pressed() -> void:
 	_set_number_text("2")
+	button_sound.play()
+	
 
 func _on_button_3_pressed() -> void:
 	_set_number_text("3")
+	button_sound.play()
 
 func _on_button_4_pressed() -> void:
 	_set_number_text("4")
+	button_sound.play()
 
 func _on_button_5_pressed() -> void:
 	_set_number_text("5")
+	button_sound.play()
 
 func _on_button_6_pressed() -> void:
 	_set_number_text("6")
+	button_sound.play()
 
 func _on_button_7_pressed() -> void:
 	_set_number_text("7")
+	button_sound.play()
 
 func _on_button_8_pressed() -> void:
 	_set_number_text("8")
+	button_sound.play()
 
 func _on_button_9_pressed() -> void:
 	_set_number_text("9")
+	button_sound.play()
 
 func _on_button_cancel_pressed() -> void:
 	index_number = 0
 	user_code = 0
 	display_text = "- - - - - -"
 	_set_display_text_node_text()
+	button_sound.play()
 
 func _on_button_0_pressed() -> void:
 	_set_number_text("0")
+	button_sound.play()
 
 func _on_button_ok_pressed() -> void:
 	if code != user_code:
@@ -109,6 +122,7 @@ func _on_button_ok_pressed() -> void:
 	else:
 		_close()
 		open_door.emit()
+	button_sound.play()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	player_inside = true
