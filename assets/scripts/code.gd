@@ -3,7 +3,7 @@ extends Control
 @export var code:int = 123456
 @export_color_no_alpha var wrong_color: Color = Color("d30000")
 @export_color_no_alpha var warn_color: Color = Color("d4b700")
-@export var player: CharacterBody3D
+@export var player: RigidBody3D
 var UI_element: Control
 
 signal open_door

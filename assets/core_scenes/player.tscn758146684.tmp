@@ -10,7 +10,17 @@ axis_lock_angular_x = true
 axis_lock_angular_z = true
 mass = 80.0
 script = ExtResource("1_0c8fa")
+camera_move = null
+speed = null
+camera_lerp_speed = null
+enble_move = null
+hold_item = null
 player_mesh = NodePath("PlayerNode")
+player_sus = null
+player_do_sus = null
+can_move = null
+sus_timeout = null
+sus_down_per_second = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=378544446]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99775195, 0)
@@ -24,4 +34,3 @@ doppler_tracking = 2
 projection = 1
 current = true
 size = 8.0
-far = 50.0

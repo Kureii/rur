@@ -2,7 +2,7 @@ extends MeshInstance3D
 
 @export var ID: int = 1
 @export var UI_element: Control
-@export var player: CharacterBody3D
+@export var player: RigidBody3D
 @export var offset: Vector3 = Vector3(0.0,1.0,-0.5)
 @export var world_node: Node3D
 @export var emplace_node: Node3D

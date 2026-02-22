@@ -1,7 +1,7 @@
 extends Control
 
 @export var code_node: Control
-@export var player: CharacterBody3D
+@export var player: RigidBody3D
 @export var sus_per_second: float = 5.0
 var UI_element: Control
 
