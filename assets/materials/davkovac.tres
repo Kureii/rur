@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://3gnxydhd8vho"]
+
+[ext_resource type="Shader" uid="uid://cfmxm46od55n6" path="res://assets/shaders/pbr_mask.gdshader" id="1_bycqp"]
+[ext_resource type="Texture2D" uid="uid://c144g1cafdux8" path="res://assets/textures/models/ovator/davkovac_ARM.png" id="2_1pcrd"]
+[ext_resource type="Texture2D" uid="uid://wdsa1rynjsrh" path="res://assets/textures/models/ovator/davkovac_BC.png" id="3_abvrf"]
+[ext_resource type="Texture2D" uid="uid://dsxeufrqkjuby" path="res://assets/textures/models/ovator/sliz_davkovac.bmp" id="4_ocdlb"]
+[ext_resource type="Texture2D" uid="uid://hx32n37l5qgd" path="res://assets/textures/models/ovator/davkovac_N.png" id="5_ijjsg"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_bycqp")
+shader_parameter/base_color = ExtResource("3_abvrf")
+shader_parameter/normal_map = ExtResource("5_ijjsg")
+shader_parameter/arm_map = ExtResource("2_1pcrd")
+shader_parameter/mask = ExtResource("4_ocdlb")
+shader_parameter/saturation = 0.999999977648
+shader_parameter/mask_color = Color(0.45099062, 0.73673683, 0.22930112, 1)
