@@ -2,9 +2,9 @@ extends Control
 
 @export var code_node: Control
 @onready var player: RigidBody3D = %Player
+@onready var UI_element: Control = %TakeKey
 
 @export var sus_per_second: float = 5.0
-@onready var UI_element: Control = %TakeKey
 
 var text1: RichTextLabel
 var is_player_inside: bool = false

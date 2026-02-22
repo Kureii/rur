@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://debr2xc2myyx2"]
+
+[ext_resource type="Script" uid="uid://dho5v4oakg3l5" path="res://prolog.gd" id="1_topgj"]
+[ext_resource type="VideoStream" uid="uid://bqfp755r1hvrg" path="res://assets/video/intro.ogv" id="2_m2x02"]
+
+[node name="Node2D" type="Control" unique_id=319954927]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_topgj")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=655740483]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_m2x02")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

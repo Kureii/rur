@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c17iibly3huds" path="res://assets/scripts/game.gd" id="1_4wccp"]
 [ext_resource type="PackedScene" uid="uid://b5kwrbaijojyt" path="res://assets/core_scenes/player.tscn" id="2_o1ycs"]
 [ext_resource type="Script" uid="uid://bqog5soopv0gi" path="res://assets/scripts/click_time_range_event.gd" id="3_7cjtb"]
+[ext_resource type="Texture2D" uid="uid://bxrg45oixvylu" path="res://assets/textures/2d/spacebar.png" id="4_18erw"]
 [ext_resource type="Texture2D" uid="uid://dm5qvppmyi6mg" path="res://assets/textures/2d/sus_bar/sus_bar_separe.png" id="4_syd11"]
 [ext_resource type="Texture2D" uid="uid://bp2l3yukhmmqu" path="res://assets/textures/2d/sus_bar/sus_bar_2048.png" id="5_e2g6m"]
 [ext_resource type="Texture2D" uid="uid://cmf667oy48nlk" path="res://assets/textures/2d/sus_bar/sus_bar_inside.png" id="6_yuelw"]
@@ -24,6 +25,7 @@
 [ext_resource type="Script" uid="uid://c3fh2a4ttsbt2" path="res://assets/scripts/smoke_emmitor.gd" id="20_yuelw"]
 [ext_resource type="Script" uid="uid://p16a5mtceh6r" path="res://assets/scripts/conveyor_belt_path-paper.gd" id="22_vco0y"]
 [ext_resource type="Script" uid="uid://ci28bebx8akrc" path="res://assets/scripts/range_minigame_enable.gd" id="23_7cjtb"]
+[ext_resource type="Script" uid="uid://dhjytgyd8obfi" path="res://assets/scripts/end_game.gd" id="25_6lgvf"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_t3pxi"]
 
@@ -116,6 +118,9 @@ point_count = 6
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vco0y"]
 size = Vector3(3.045166, 0.9848633, 2.3533936)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_18erw"]
+size = Vector3(2.3085938, 1, 2.1606445)
 
 [sub_resource type="Environment" id="Environment_4wccp"]
 background_energy_multiplier = 0.0
@@ -227,6 +232,15 @@ theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control/MarginContainer" unique_id=1769623445]
+custom_minimum_size = Vector2(1000, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("4_18erw")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="CloseButton" type="Button" parent="UI/Control/MarginContainer" unique_id=399001636]
 z_index = 10
@@ -620,7 +634,6 @@ script = ExtResource("23_7cjtb")
 
 [node name="Door" type="MeshInstance3D" parent="Levels/Level02" unique_id=680335720]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.10512, 1.4328699, -0.20368195)
-visible = false
 mesh = SubResource("BoxMesh_53lbx")
 script = ExtResource("13_w5iin")
 
@@ -631,6 +644,14 @@ shape = SubResource("BoxShape3D_4sl0j")
 
 [node name="Level03" parent="Levels" unique_id=693390534 instance=ExtResource("16_wkiio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.084, 0.045, -3.0668807)
+script = ExtResource("25_6lgvf")
+
+[node name="Area3D" type="Area3D" parent="Levels/Level03" unique_id=293029862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.530281, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Level03/Area3D" unique_id=1283504033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6542969, 0.51941776, 0.58032227)
+shape = SubResource("BoxShape3D_18erw")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1551875020]
 environment = SubResource("Environment_4wccp")
@@ -662,6 +683,7 @@ light_energy = 11.37
 spot_range = 6.16661
 spot_angle = 34.682533
 
+[connection signal="_open_door" from="UI/Control" to="Levels/Level02/Door" method="_on_control__open_door"]
 [connection signal="pressed" from="UI/Control/MarginContainer/CloseButton" to="UI/Control" method="_on_close_button_pressed"]
 [connection signal="pressed" from="UI/CodeSource/MarginContainer/MarginContainer2/CloseButton" to="UI/CodeSource" method="_on_close_button_pressed"]
 [connection signal="open_door" from="UI/Code" to="Levels/Level_01/Door" method="_on_open_door"]
@@ -682,3 +704,5 @@ spot_angle = 34.682533
 [connection signal="body_exited" from="Levels/Level02/Takeble/Area3D" to="Levels/Level02/Takeble" method="_on_player_exited"]
 [connection signal="body_entered" from="Levels/Level02/RangeMinigame" to="UI/Control" method="_on_range_minigame_body_entered"]
 [connection signal="body_exited" from="Levels/Level02/RangeMinigame" to="UI/Control" method="_on_range_minigame_body_exited"]
+[connection signal="body_entered" from="Levels/Level03/Area3D" to="Levels/Level03" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Levels/Level03/Area3D" to="Levels/Level03" method="_on_area_3d_body_exited"]
