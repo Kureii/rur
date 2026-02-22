@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dshju8kbvqyfm"]
+
+[ext_resource type="Script" uid="uid://b3yoandnijyot" path="res://assets/scripts/belt_object_run.gd" id="1_d2llh"]
+[ext_resource type="ArrayMesh" uid="uid://bqowuv7y6vxlu" path="res://assets/meshes/dynamics/shit.obj" id="2_0hpp8"]
+[ext_resource type="Material" uid="uid://cgtqfyg3o6c3p" path="res://assets/materials/shit.tres" id="2_26rnf"]
+
+[node name="PathFollow3D" type="PathFollow3D" unique_id=2070815160]
+transform = Transform3D(-0.9999929, 0, -0.0037735929, 0, 1, 0, 0.0037735929, 0, -0.9999929, 0, 0, 0)
+script = ExtResource("1_d2llh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=304288661]
+transform = Transform3D(0.30000004, 0, -1.1641532e-10, 0, 0.3, 0, 1.1641532e-10, 0, 0.30000004, 0, 0.25423074, 0)
+material_override = ExtResource("2_26rnf")
+mesh = ExtResource("2_0hpp8")

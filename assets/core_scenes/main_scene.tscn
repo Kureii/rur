@@ -15,22 +15,17 @@
 [ext_resource type="Script" uid="uid://bhkrybeulo7df" path="res://assets/scripts/open_door.gd" id="13_w5iin"]
 [ext_resource type="PackedScene" uid="uid://blcrvwb1826s5" path="res://assets/core_scenes/level_02.tscn" id="14_uhx3f"]
 [ext_resource type="Script" uid="uid://nykyq2o30sp1" path="res://assets/scripts/conveyor_belt_path.gd" id="15_4sdlk"]
+[ext_resource type="Material" uid="uid://cgtqfyg3o6c3p" path="res://assets/materials/shit.tres" id="16_o1ycs"]
 [ext_resource type="PackedScene" uid="uid://bcdxtexmtox0s" path="res://assets/core_scenes/level_03.tscn" id="16_wkiio"]
 [ext_resource type="Script" uid="uid://5t3up78kvxql" path="res://assets/scripts/take_item.gd" id="17_7jf5a"]
+[ext_resource type="Script" uid="uid://ckfx4fhclkv35" path="res://assets/scripts/destroy_belt.gd" id="17_uurnr"]
+[ext_resource type="Texture2D" uid="uid://dir5wn21lpi0d" path="res://assets/textures/2d/smoke.png" id="19_e2g6m"]
+[ext_resource type="Script" uid="uid://c3fh2a4ttsbt2" path="res://assets/core_scenes/smoke_emmitor.gd" id="20_yuelw"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_t3pxi"]
 
 [sub_resource type="GDScript" id="GDScript_o2qp1"]
 script/source = "extends HBoxContainer
-"
-
-[sub_resource type="GDScript" id="GDScript_53lbx"]
-script/source = "extends Area3D
-
-func _ready():
-	await get_tree().process_frame
-	var collider = get_child(0)
-	collider.disabled = false
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sdlx5"]
@@ -47,10 +42,25 @@ size = Vector3(2.175, 2.97, 0.395)
 
 [sub_resource type="Curve3D" id="Curve3D_ucjp8"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.4840975, -0.00651443, -6.1885586, 0, 0, 0, 0, 0, 0, -6.0153284, -0.00651443, -6.154669, 0, 0, 0, 0, 0, 0, -5.990409, -0.00651443, -1.797328, 0, 0, 0, 0, 0, 0, 5.1503353, -0.00651443, -1.7785721, 0, 0, 0, 0, 0, 0, 5.036417, -0.00651443, -6.1936283, 0, 0, 0, 0, 0, 0, 13.499453, -0.0065436363, -6.2163715),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.4840975, -0.00651443, -6.1885586, 0, 0, 0, 0, 0, 0, -6.0153284, -0.00651443, -6.154669, 0, 0, 0, 0, 0, 0, -5.990409, -0.00651443, -1.797328, 0, 0, 0, 0, 0, 0, -0.737484, -0.00651443, -1.7785721),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 6
+point_count = 4
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4wccp"]
+lifetime_randomness = 0.17
+angle_min = -307.3
+angle_max = 234.90001
+direction = Vector3(1, 5.13, 0)
+flatness = 0.075
+initial_velocity_max = 6.33
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_o1ycs"]
+radius = 0.1
+height = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1n6gp"]
 emission_enabled = true
@@ -59,17 +69,40 @@ emission = Color(1, 0, 0, 1)
 [sub_resource type="TubeTrailMesh" id="TubeTrailMesh_sdlx5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_53lbx"]
-size = Vector3(1.5, 1, 1.5)
+size = Vector3(3.4987793, 1, 2.8867798)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4sl0j"]
 emission_enabled = true
 emission = Color(0, 1, 0, 1)
 
 [sub_resource type="PrismMesh" id="PrismMesh_v2bml"]
-size = Vector3(0.5, 0.5, 0.5)
+size = Vector3(0.3, 0.3, 0.3)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ucjp8"]
-size = Vector3(1, 0.74121094, 1)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_o1ycs"]
+height = 0.41394043
+radius = 1.0732422
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vco0y"]
+transparency = 1
+albedo_texture = ExtResource("19_e2g6m")
+billboard_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7cjtb"]
+lifetime_randomness = 0.24
+gravity = Vector3(0, 3, 0)
+scale_min = 0.79999995
+scale_max = 4.36
+turbulence_enabled = true
+turbulence_noise_scale = 4.38
+turbulence_noise_speed = Vector3(0.74, 4.28, 0.2)
+turbulence_noise_speed_random = 1.99
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.019000001
+turbulence_initial_displacement_min = -6.7999988
+turbulence_initial_displacement_max = 5.6000013
+
+[sub_resource type="QuadMesh" id="QuadMesh_6lgvf"]
+size = Vector2(0.5, 0.5)
 
 [sub_resource type="Environment" id="Environment_4wccp"]
 background_energy_multiplier = 0.0
@@ -93,7 +126,8 @@ script = ExtResource("1_4wccp")
 shape = SubResource("WorldBoundaryShape3D_t3pxi")
 
 [node name="Player" parent="." unique_id=453805534 node_paths=PackedStringArray("game_over_screen") instance=ExtResource("2_o1ycs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0887413, 7.1525574e-07, 3.5774043)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3304982, 1.66893e-06, 3.2297878)
 camera_lerp_speed = 1.9
 game_over_screen = NodePath("../UI/GameOver")
 
@@ -154,7 +188,7 @@ visible = false
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
 speed = 5.0
-action_slider_position = 0.5844684931703603
+action_slider_position = 0.7421191814080329
 bad_fill_color = Color(0.35684976, 0, 0.11989654, 1)
 neutral_fill_color = Color(0.56100917, 0.2719489, 1.92523e-07, 1)
 good_fill_color = Color(0, 0.5038379, 0, 1)
@@ -384,7 +418,6 @@ text = "Exit game"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011248589, 9.536743e-07, 0.0090613365)
 
 [node name="CodeDocument" type="Area3D" parent="Levels/Level_01" unique_id=1809144746]
-script = SubResource("GDScript_53lbx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Level_01/CodeDocument" unique_id=1209043320]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6981554, 0.51942754, 1.9980373)
@@ -401,7 +434,6 @@ length = 5.85
 volume_top = -0.015
 
 [node name="CodeDoor" type="Area3D" parent="Levels/Level_01" unique_id=2082356244]
-script = SubResource("GDScript_53lbx")
 
 [node name="CodeDoorCollision" type="CollisionShape3D" parent="Levels/Level_01/CodeDoor" unique_id=12433872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2927442, 0.4777832, -3.235551)
@@ -443,41 +475,67 @@ volume_top = -0.015
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1385611, 1.571866)
 curve = SubResource("Curve3D_ucjp8")
 script = ExtResource("15_4sdlk")
-spawn_time = 1.0
-max_spowned = 13
+spawn_time = 1.3
+max_spowned = 6
 
-[node name="Level03" parent="Levels" unique_id=693390534 instance=ExtResource("16_wkiio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.084, 0.045, -3.523)
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Levels/Level02/Path3D" unique_id=1440996255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.583916, 0.29824805, -6.084917)
+material_override = ExtResource("16_o1ycs")
+lifetime = 1.3
+explosiveness = 0.22
+randomness = 0.1
+process_material = SubResource("ParticleProcessMaterial_4wccp")
+draw_pass_1 = SubResource("SphereMesh_o1ycs")
 
-[node name="EmplaceTakeble" type="MeshInstance3D" parent="." unique_id=754507386]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.626812, -4.7683716e-06, -11.993792)
-visible = false
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Levels/Level02/Path3D/GPUParticles3D" unique_id=1045840357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7291565, -1.3329434, 0)
+size = Vector3(6.4398804, 2, 2)
+
+[node name="GPUParticlesAttractorBox3D" type="GPUParticlesAttractorBox3D" parent="Levels/Level02/Path3D" unique_id=1471006355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4933815, 0, -6.1662483)
+
+[node name="EmplaceTakeble" type="MeshInstance3D" parent="Levels/Level02" unique_id=754507386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8698936, 0.54510033, -0.13077259)
 material_override = SubResource("StandardMaterial3D_1n6gp")
 mesh = SubResource("TubeTrailMesh_sdlx5")
+script = ExtResource("17_uurnr")
+slide_distance = 4.4
+slide_duration = 3.0
 
-[node name="Area3D" type="Area3D" parent="EmplaceTakeble" unique_id=1845566268]
-script = SubResource("GDScript_53lbx")
+[node name="Area3D" type="Area3D" parent="Levels/Level02/EmplaceTakeble" unique_id=1845566268]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EmplaceTakeble/Area3D" unique_id=1556214210]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Level02/EmplaceTakeble/Area3D" unique_id=1556214210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99938965, 0, 0.6933899)
 shape = SubResource("BoxShape3D_53lbx")
 
-[node name="Takeble" type="MeshInstance3D" parent="." unique_id=494486105 node_paths=PackedStringArray("UI_element", "player", "world_node", "emplace_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.695662, -9.536743e-07, -6.552042)
-visible = false
+[node name="Takeble" type="MeshInstance3D" parent="Levels/Level02" unique_id=494486105 node_paths=PackedStringArray("world_node", "emplace_node")]
+transform = Transform3D(0.84752977, 0, 0.5307479, 0, 1, 0, -0.5307479, 0, 0.84752977, 10.642328, 1.2073973, 2.6620035)
 material_override = SubResource("StandardMaterial3D_4sl0j")
 mesh = SubResource("PrismMesh_v2bml")
 script = ExtResource("17_7jf5a")
-UI_element = NodePath("../UI/TakeKey")
-player = NodePath("../Player")
 offset = Vector3(0, 1, 0.5)
-world_node = NodePath("../Levels")
+world_node = NodePath("..")
 emplace_node = NodePath("../EmplaceTakeble")
 
-[node name="Area3D" type="Area3D" parent="Takeble" unique_id=1915705143]
+[node name="Area3D" type="Area3D" parent="Levels/Level02/Takeble" unique_id=1915705143]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Takeble/Area3D" unique_id=711861056]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12939453, 0)
-shape = SubResource("BoxShape3D_ucjp8")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Levels/Level02/Takeble/Area3D" unique_id=711861056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02154541, 0)
+shape = SubResource("CylinderShape3D_o1ycs")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Levels/Level02" unique_id=59042501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74653435, 2.3204966, 0.7268486)
+material_override = SubResource("StandardMaterial3D_vco0y")
+emitting = false
+amount = 200
+lifetime = 1.1
+randomness = 0.19
+process_material = SubResource("ParticleProcessMaterial_7cjtb")
+draw_pass_1 = SubResource("QuadMesh_6lgvf")
+script = ExtResource("20_yuelw")
+
+[node name="Level03" parent="Levels" unique_id=693390534 instance=ExtResource("16_wkiio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.084, 0.045, -3.523)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1551875020]
 environment = SubResource("Environment_4wccp")
@@ -490,21 +548,21 @@ light_energy = 0.05
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Light" unique_id=1509196583]
 transform = Transform3D(1, 0, 0, 0, 0.81130874, 0.58461785, 0, -0.58461785, 0.81130874, 1.1386182, 3.339076, 5.312089)
-light_color = Color(1, 0, 0, 1)
+light_color = Color(0.56078434, 0.23529412, 0.36862746, 1)
 light_energy = 11.37
 spot_range = 6.16661
 spot_angle = 34.682533
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Light" unique_id=1428264773]
 transform = Transform3D(1, 0, 0, 0, 0.8113088, 0.5846179, 0, -0.5846179, 0.8113088, 6.108293, 3.339076, -5.0095477)
-light_color = Color(1, 0, 0, 1)
+light_color = Color(0.56078434, 0.23529412, 0.36862746, 1)
 light_energy = 11.37
 spot_range = 6.16661
 spot_angle = 34.682533
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Light" unique_id=405644282]
 transform = Transform3D(1, 0, 0, 0, 0.8113088, 0.5846179, 0, -0.5846179, 0.8113088, 15.594006, 3.339076, -5.0095477)
-light_color = Color(1, 0, 0, 1)
+light_color = Color(0.56078434, 0.23529412, 0.36862746, 1)
 light_energy = 11.37
 spot_range = 6.16661
 spot_angle = 34.682533
@@ -517,7 +575,10 @@ spot_angle = 34.682533
 [connection signal="body_exited" from="Levels/Level_01/CodeDocument" to="UI/CodeSource" method="_on_code_document_body_exited"]
 [connection signal="body_entered" from="Levels/Level_01/CodeDoor" to="UI/Code" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Levels/Level_01/CodeDoor" to="UI/Code" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="EmplaceTakeble/Area3D" to="Takeble" method="_on_emplace_entered"]
-[connection signal="body_exited" from="EmplaceTakeble/Area3D" to="Takeble" method="_on_emplace_exited"]
-[connection signal="body_entered" from="Takeble/Area3D" to="Takeble" method="_on_player_entered"]
-[connection signal="body_exited" from="Takeble/Area3D" to="Takeble" method="_on_player_exited"]
+[connection signal="destroy" from="Levels/Level02/EmplaceTakeble" to="Levels/Level02/Path3D" method="_on_emplace_takeble_destroy"]
+[connection signal="destroy" from="Levels/Level02/EmplaceTakeble" to="Levels/Level02/GPUParticles3D" method="_on_emplace_takeble_destroy"]
+[connection signal="body_entered" from="Levels/Level02/EmplaceTakeble/Area3D" to="Levels/Level02/Takeble" method="_on_emplace_entered"]
+[connection signal="body_exited" from="Levels/Level02/EmplaceTakeble/Area3D" to="Levels/Level02/Takeble" method="_on_emplace_exited"]
+[connection signal="_emplace_item" from="Levels/Level02/Takeble" to="Levels/Level02/EmplaceTakeble" method="_on_takeble__emplace_item"]
+[connection signal="body_entered" from="Levels/Level02/Takeble/Area3D" to="Levels/Level02/Takeble" method="_on_player_entered"]
+[connection signal="body_exited" from="Levels/Level02/Takeble/Area3D" to="Levels/Level02/Takeble" method="_on_player_exited"]

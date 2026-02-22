@@ -1,8 +1,7 @@
 extends MeshInstance3D
 
-@export var ID: int = 1
-@export var UI_element: Control
-@export var player: RigidBody3D
+@onready var UI_element: Control = %TakeKey
+@onready var player: RigidBody3D = %Player
 @export var offset: Vector3 = Vector3(0.0,1.0,-0.5)
 @export var world_node: Node3D
 @export var emplace_node: Node3D
@@ -14,14 +13,21 @@ var is_emplace_near = false
 var first_run = true
 var parent_node: Node3D
 
+signal _emplace_item
+
 func _input(event: InputEvent) -> void:
+	if first_run and (event.is_action_pressed("action_button") or event.is_action_pressed("move_backward") or event.is_action_pressed("move_forward") or event.is_action_pressed("move_left") or event.is_action_pressed("move_right") or event.is_action_pressed("space")):
+			first_run = false
 	if is_player_inside:
 		if event.is_action_pressed("action_button"):
+			
 			parent_node = get_parent_node_3d()
+			
 			if parent_node == player:
 				if is_emplace_near:
 					reparent(emplace_node)
 					position = emplace_offset
+					_emplace_item.emit()
 				else:
 					var position_tmp = global_position
 					var rotation_tmp = global_rotation
@@ -40,7 +46,6 @@ func _input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	if first_run:
-		first_run = false
 		is_player_inside = false
 		is_player_holding = false
 		is_emplace_near = false
