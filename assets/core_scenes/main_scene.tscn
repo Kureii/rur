@@ -154,7 +154,7 @@ visible = false
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
 speed = 5.0
-action_slider_position = 0.5844684931703603
+action_slider_position = 0.9882687235944443
 bad_fill_color = Color(0.35684976, 0, 0.11989654, 1)
 neutral_fill_color = Color(0.56100917, 0.2719489, 1.92523e-07, 1)
 good_fill_color = Color(0, 0.5038379, 0, 1)
@@ -381,7 +381,7 @@ text = "Exit game"
 [node name="Levels" type="Node3D" parent="." unique_id=712890750]
 
 [node name="Level_01" parent="Levels" unique_id=2075447839 instance=ExtResource("11_mkuoi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011248589, 9.536743e-07, 0.0090613365)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011589289, 0.0011820793, 0.008416176)
 
 [node name="CodeDocument" type="Area3D" parent="Levels/Level_01" unique_id=1809144746]
 script = SubResource("GDScript_53lbx")
@@ -422,7 +422,7 @@ shape = SubResource("BoxShape3D_4sl0j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.070372, 0.006514445, -11.24369)
 
 [node name="CameraMesh" parent="Levels/Level02" unique_id=759549420 instance=ExtResource("12_3hvx4")]
-transform = Transform3D(1, 0, 0, 0, 0.49541306, -0.8686573, 0, 0.8686573, 0.49541306, -5.933301, 3.285437, 6.5452743)
+transform = Transform3D(1, 0, 0, 0, 0.49541306, -0.8686573, 0, 0.8686573, 0.49541306, -5.933301, 3.285437, 6.3123393)
 sus_per_second = 14.215
 speed = 0.43
 radius = 0.555
@@ -431,7 +431,7 @@ length = 5.0
 volume_top = -0.015
 
 [node name="CameraMesh2" parent="Levels/Level02" unique_id=2037350846 instance=ExtResource("12_3hvx4")]
-transform = Transform3D(1, 0, 0, 0, 0.49541306, -0.8686573, 0, 0.8686573, 0.49541306, 3.4843254, 3.285437, 6.5452743)
+transform = Transform3D(1, 0, 0, 0, 0.49541306, -0.8686573, 0, 0.8686573, 0.49541306, 3.4843254, 3.285437, 6.317873)
 sus_per_second = 14.215
 speed = 0.43
 radius = 0.555
