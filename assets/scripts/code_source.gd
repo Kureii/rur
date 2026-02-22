@@ -1,7 +1,7 @@
 extends Control
 
 @export var code_node: Control
-@export var player: RigidBody3D
+@onready var player: RigidBody3D = %Player
 @export var sus_per_second: float = 5.0
 var UI_element: Control
 
@@ -63,6 +63,7 @@ func _on_close_button_pressed() -> void:
 
 
 func _on_code_document_body_entered(body: Node3D) -> void:
+	print("enter")
 	UI_element.visible = true
 	is_player_inside = true
 

@@ -3,8 +3,8 @@ extends Control
 @export var code:int = 123456
 @export_color_no_alpha var wrong_color: Color = Color("d30000")
 @export_color_no_alpha var warn_color: Color = Color("d4b700")
-@export var player: RigidBody3D
-var UI_element: Control
+@onready var player: RigidBody3D = %Player
+@onready var UI_element: Control =%TakeKey
 
 signal open_door
 
@@ -19,7 +19,6 @@ var first_run= true
 func _ready():
 	await get_tree().process_frame
 	display_text_node = $MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/DisplayText
-	UI_element = %TakeKey
 
 func _process(delta: float) -> void:
 	if first_run:
