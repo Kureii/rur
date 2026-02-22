@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cne3hampd3ffq"]
+
+[ext_resource type="Texture2D" uid="uid://bh0vlwurb85mq" path="res://assets/textures/papir_stroj/DefaultMaterial_BC.png" id="1_d88ck"]
+
+[resource]
+albedo_texture = ExtResource("1_d88ck")
+roughness = 0.55
