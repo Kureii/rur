@@ -15,6 +15,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b15d78gddq3hx" path="res://assets/meshes/static/krabice/krabice_otevrena.obj" id="13_g0k6j"]
 [ext_resource type="ArrayMesh" uid="uid://cbjbwyb8xx84l" path="res://assets/meshes/static/barel/barel_velky.obj" id="14_re36u"]
 [ext_resource type="Material" uid="uid://dvgdj08whfwb" path="res://assets/materials/window.tres" id="15_eye67"]
+[ext_resource type="ArrayMesh" uid="uid://clx5togyyfurt" path="res://assets/meshes/static/krabice/krabice_rozbita.obj" id="15_re36u"]
 [ext_resource type="ArrayMesh" uid="uid://bu0gtvpainfls" path="res://assets/meshes/static/kohoutek/kohoutek.obj" id="15_g0k6j"]
 [ext_resource type="ArrayMesh" uid="uid://ig8gbrfyp84w" path="res://assets/meshes/static/papir_stroj/papir_stroj.obj" id="16_re36u"]
 
@@ -258,6 +259,16 @@ shape = SubResource("BoxShape3D_g617n")
 
 [node name="Sloup13" type="MeshInstance3D" parent="StaticObjects" unique_id=1769319147]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.609231, 0.012018681, -2.6470814)
+material_override = ExtResource("3_0jywm")
+mesh = ExtResource("4_vuh1b")
+
+[node name="Sloup12" type="MeshInstance3D" parent="Sloup" unique_id=1602058840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.553688, 0.01030159, 3.9514575)
+material_override = ExtResource("3_0jywm")
+mesh = ExtResource("4_vuh1b")
+
+[node name="Sloup13" type="MeshInstance3D" parent="Sloup" unique_id=627442067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.138156, 0.01030159, 3.9514575)
 material_override = ExtResource("3_0jywm")
 mesh = ExtResource("4_vuh1b")
 
