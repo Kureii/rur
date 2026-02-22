@@ -1,7 +1,20 @@
 [gd_scene format=3 uid="uid://d4eh24xaiqvci"]
 
 [ext_resource type="Script" uid="uid://blaa54vuppgpx" path="res://assets/scripts/code.gd" id="1_g67wo"]
+[ext_resource type="Texture2D" uid="uid://dk72l2ahfc3n6" path="res://assets/textures/2d/code/keypad_01_crop.png" id="2_3u3kq"]
 [ext_resource type="FontFile" uid="uid://dplwdaw8x1mmm" path="res://assets/fonts/Workbench-Regular-VariableFont_BLED,SCAN.ttf" id="2_de5rt"]
+[ext_resource type="Texture2D" uid="uid://bkb72c6ebnxun" path="res://assets/textures/2d/code/key1.png" id="4_pmvhm"]
+[ext_resource type="Texture2D" uid="uid://cahfi5bw7i8y0" path="res://assets/textures/2d/code/key2.png" id="5_83ww6"]
+[ext_resource type="Texture2D" uid="uid://b45xs6qteebux" path="res://assets/textures/2d/code/key3.png" id="6_qx3eh"]
+[ext_resource type="Texture2D" uid="uid://oc27rr7kffvh" path="res://assets/textures/2d/code/key4.png" id="7_t62qm"]
+[ext_resource type="Texture2D" uid="uid://375y3irljj45" path="res://assets/textures/2d/code/key5.png" id="8_02310"]
+[ext_resource type="Texture2D" uid="uid://121j4bv6gtg2" path="res://assets/textures/2d/code/key6.png" id="9_drtw5"]
+[ext_resource type="Texture2D" uid="uid://bvbvh7ebf022y" path="res://assets/textures/2d/code/key7.png" id="10_ad51q"]
+[ext_resource type="Texture2D" uid="uid://fwjqj5dt84di" path="res://assets/textures/2d/code/key8.png" id="11_3dgvm"]
+[ext_resource type="Texture2D" uid="uid://dum05o6ajns2c" path="res://assets/textures/2d/code/key9.png" id="12_1578l"]
+[ext_resource type="Texture2D" uid="uid://cdcvlntyoep22" path="res://assets/textures/2d/code/keyX.png" id="13_7yj73"]
+[ext_resource type="Texture2D" uid="uid://dl0r543b8vj5d" path="res://assets/textures/2d/code/key0.png" id="14_3hmnj"]
+[ext_resource type="Texture2D" uid="uid://c6s06sa7a66k4" path="res://assets/textures/2d/code/keyFAJVKA.png" id="15_n77n6"]
 
 [node name="Code" type="Control" unique_id=1762248896]
 layout_mode = 3
@@ -35,9 +48,22 @@ theme_override_constants/margin_bottom = 40
 layout_mode = 2
 ratio = 0.8246
 
-[node name="Panel" type="ColorRect" parent="MarginContainer/MarginContainer/AspectRatioContainer" unique_id=1120588764]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/MarginContainer/AspectRatioContainer" unique_id=1307781409]
 layout_mode = 2
-color = Color(0.21230483, 0.21230483, 0.21230483, 1)
+color = Color(0.94, 0.94, 0.94, 0)
+
+[node name="Panel" type="TextureRect" parent="MarginContainer/MarginContainer/AspectRatioContainer/ColorRect" unique_id=362323764]
+custom_minimum_size = Vector2(0, 1000)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("2_3u3kq")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/AspectRatioContainer" unique_id=846429016]
 layout_mode = 2
@@ -56,7 +82,7 @@ layout_mode = 2
 [node name="Display" type="ColorRect" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=229228638]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
-color = Color(0.044624995, 0.09, 0.0405, 1)
+color = Color(0.044624995, 0.09, 0.0405, 0)
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=661515261]
 layout_mode = 2
@@ -67,7 +93,7 @@ theme_override_constants/margin_bottom = 30
 
 [node name="DisplayText" type="Label" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer" unique_id=765551582]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.25153333, 0.55, 0.14299999, 1)
+theme_override_colors/font_color = Color(0.25153333, 0.55, 0.14299999, 0.5529412)
 theme_override_fonts/font = ExtResource("2_de5rt")
 theme_override_font_sizes/font_size = 120
 text = "- - - - - -"
@@ -84,77 +110,89 @@ theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 20
 columns = 3
 
-[node name="Button1" type="Button" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1971438813]
+[node name="Button1" type="TextureButton" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=630770734]
 custom_minimum_size = Vector2(130, 13)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "1"
+texture_normal = ExtResource("4_pmvhm")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="Button2" type="Button" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1183177580]
+[node name="Button2" type="TextureButton" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1536925250]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "2"
+texture_normal = ExtResource("5_83ww6")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="Button3" type="Button" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=467525746]
+[node name="Button3" type="TextureButton" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=2053487668]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "3"
+texture_normal = ExtResource("6_qx3eh")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="Button4" type="Button" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=412746762]
+[node name="Button4" type="TextureButton" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=2065856916]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "4"
+texture_normal = ExtResource("7_t62qm")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="Button5" type="Button" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1811489062]
+[node name="Button5" type="TextureButton" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1001413692]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "5"
+texture_normal = ExtResource("8_02310")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="Button6" type="Button" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=779754394]
+[node name="Button6" type="TextureButton" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=411096956]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "6"
+texture_normal = ExtResource("9_drtw5")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="Button7" type="Button" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1802469679]
+[node name="Button7" type="TextureButton" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1537131737]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "7"
+texture_normal = ExtResource("10_ad51q")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="Button8" type="Button" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=623013436]
+[node name="Button8" type="TextureButton" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=2023323103]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "8"
+texture_normal = ExtResource("11_3dgvm")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="Button9" type="Button" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=598065130]
+[node name="Button9" type="TextureButton" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1317266403]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "9"
+texture_normal = ExtResource("12_1578l")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="ButtonCancel" type="Button" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1159869852]
+[node name="ButtonCancel" type="TextureButton" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=120457869]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "🗙"
+texture_normal = ExtResource("13_7yj73")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="Button0" type="Button" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=892665551]
+[node name="Button0" type="TextureButton" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1159778519]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "0"
+texture_normal = ExtResource("14_3hmnj")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="ButtonOK" type="Button" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=397322491]
+[node name="ButtonOK" type="TextureButton" parent="MarginContainer/MarginContainer/AspectRatioContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=417807769]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "✓"
+texture_normal = ExtResource("15_n77n6")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="CloseButton" type="Button" parent="MarginContainer/MarginContainer" unique_id=894828870]
 z_index = 10
