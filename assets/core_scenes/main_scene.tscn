@@ -13,14 +13,15 @@
 [ext_resource type="PackedScene" uid="uid://11re4ouahoen" path="res://assets/core_scenes/level_01.tscn" id="11_mkuoi"]
 [ext_resource type="PackedScene" uid="uid://b0p741oe01pxm" path="res://assets/core_scenes/camera.tscn" id="12_3hvx4"]
 [ext_resource type="Script" uid="uid://bhkrybeulo7df" path="res://assets/scripts/open_door.gd" id="13_w5iin"]
+[ext_resource type="Material" uid="uid://j3tq45fduqpr" path="res://assets/materials/MoreVsechnoKovove.tres" id="13_yuelw"]
 [ext_resource type="PackedScene" uid="uid://blcrvwb1826s5" path="res://assets/core_scenes/level_02.tscn" id="14_uhx3f"]
 [ext_resource type="Script" uid="uid://nykyq2o30sp1" path="res://assets/scripts/conveyor_belt_path.gd" id="15_4sdlk"]
 [ext_resource type="Material" uid="uid://cgtqfyg3o6c3p" path="res://assets/materials/shit.tres" id="16_o1ycs"]
 [ext_resource type="PackedScene" uid="uid://bcdxtexmtox0s" path="res://assets/core_scenes/level_03.tscn" id="16_wkiio"]
 [ext_resource type="Script" uid="uid://5t3up78kvxql" path="res://assets/scripts/take_item.gd" id="17_7jf5a"]
-[ext_resource type="Script" uid="uid://ckfx4fhclkv35" path="res://assets/scripts/destroy_belt.gd" id="17_uurnr"]
+[ext_resource type="Script" path="res://assets/scripts/destroy_belt.gd" id="17_uurnr"]
 [ext_resource type="Texture2D" uid="uid://dir5wn21lpi0d" path="res://assets/textures/2d/smoke.png" id="19_e2g6m"]
-[ext_resource type="Script" uid="uid://c3fh2a4ttsbt2" path="res://assets/core_scenes/smoke_emmitor.gd" id="20_yuelw"]
+[ext_resource type="Script" path="res://assets/core_scenes/smoke_emmitor.gd" id="20_yuelw"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_t3pxi"]
 
@@ -195,7 +196,7 @@ visible = false
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
 speed = 5.0
-action_slider_position = 0.25290925792749513
+action_slider_position = 0.8727596605994613
 bad_fill_color = Color(0.35684976, 0, 0.11989654, 1)
 neutral_fill_color = Color(0.56100917, 0.2719489, 1.92523e-07, 1)
 good_fill_color = Color(0, 0.5038379, 0, 1)
@@ -445,6 +446,7 @@ shape = SubResource("BoxShape3D_1n6gp")
 
 [node name="Door" type="MeshInstance3D" parent="Levels/Level_01" unique_id=1763332666]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0600352, 1.4328699, -4.566943)
+material_override = ExtResource("13_yuelw")
 mesh = SubResource("BoxMesh_53lbx")
 script = ExtResource("13_w5iin")
 
@@ -537,10 +539,10 @@ script = ExtResource("20_yuelw")
 curve = SubResource("Curve3D_e2g6m")
 
 [node name="Level03" parent="Levels" unique_id=693390534 instance=ExtResource("16_wkiio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.084, 0.045, -3.523)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.091522, 0.045, -3.1182644)
 
 [node name="Level04" parent="Levels" unique_id=1902291642 instance=ExtResource("16_wkiio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.084, 0.045, -3.523)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.091522, 0.045, -3.1182644)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1551875020]
 environment = SubResource("Environment_4wccp")

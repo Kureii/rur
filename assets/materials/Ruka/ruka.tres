@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://n4v5eyg24wjt"]
+
+[ext_resource type="Texture2D" uid="uid://dl1lfsnmevumi" path="res://assets/materials/Ruka/ruka_BC.png" id="1_5xqut"]
+
+[resource]
+albedo_texture = ExtResource("1_5xqut")
+metallic = 0.55
+roughness = 0.25
