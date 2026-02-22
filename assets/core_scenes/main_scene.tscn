@@ -154,7 +154,7 @@ visible = false
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
 speed = 5.0
-action_slider_position = 0.9882687235944443
+action_slider_position = 0.2486859855287593
 bad_fill_color = Color(0.35684976, 0, 0.11989654, 1)
 neutral_fill_color = Color(0.56100917, 0.2719489, 1.92523e-07, 1)
 good_fill_color = Color(0, 0.5038379, 0, 1)
@@ -447,7 +447,7 @@ spawn_time = 1.0
 max_spowned = 13
 
 [node name="Level03" parent="Levels" unique_id=693390534 instance=ExtResource("16_wkiio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.084, 0.045, -3.523)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.084, 0.03, -3.111)
 
 [node name="EmplaceTakeble" type="MeshInstance3D" parent="." unique_id=754507386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.626812, -4.7683716e-06, -11.993792)
