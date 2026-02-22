@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b677aij2p4fyp"]
+
+[ext_resource type="Texture2D" uid="uid://chp5i307ko4x4" path="res://assets/materials/Levels/Level3/podlaha3_BC.png" id="1_ycn0k"]
+[ext_resource type="Texture2D" uid="uid://ccvxx6k7dvwgc" path="res://assets/materials/Levels/Level3/podlaha3_N.png" id="2_fcfve"]
+
+[resource]
+albedo_texture = ExtResource("1_ycn0k")
+normal_enabled = true
+normal_texture = ExtResource("2_fcfve")
